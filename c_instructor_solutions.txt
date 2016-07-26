@@ -1,0 +1,4860 @@
+#include <stdio.h>
+
+int main(void)
+{
+	char testCase[] = { 'A', 'B', 'C', 0 };
+	double currentTemp[] = {100.1234, 99.876543, 133.7};
+	int numOfRuns[] = {3, 4, 5};
+	int i = 0;
+
+	for (i = 0; i < 40; i++) { printf("-"); } printf("\n");
+	printf("| "); printf("%-12s%-12s%12s", "Test Case", "Temp (F)", "# of Runs"); printf(" |\n");
+	printf("|"); for (i = 0; i < 38; i++) { printf("-"); } printf("|\n");
+	printf("| "); printf("%-12c%-12.2f%012d", testCase[0], currentTemp[0], numOfRuns[0]); printf(" |\n");
+	printf("| "); printf("%-12c%-12.2f%012d", testCase[1], currentTemp[1], numOfRuns[1]); printf(" |\n");
+	printf("| "); printf("%-12c%-12.2f%012d", testCase[2], currentTemp[2], numOfRuns[2]); printf(" |\n");
+	for (i = 0; i < 40; i++) { printf("-"); } printf("\n");
+	
+//	getchar(); // Uncomment when breakpoint is removed
+	return 0;
+}
+#include <stdio.h>
+
+int main(void)
+{
+	char testCase[] = { 'A', 'B', 'C', 0 };
+	double currentTemp[] = {100.1234, 99.876543, 133.7};
+	int numOfRuns[] = {3, 4, 5};
+	
+	printf("%-12s%-12s%12s", "Test Case", "Temp (F)", "# of Runs");
+	printf("\n");
+	printf("%-12c%-12.2f%012d\n", testCase[0], currentTemp[0], numOfRuns[0]);
+	printf("%-12c%-12.2f%012d\n", testCase[1], currentTemp[1], numOfRuns[1]);
+	printf("%-12c%-12.2f%012d\n", testCase[2], currentTemp[2], numOfRuns[2]);
+		
+//	getchar(); // Uncomment when breakpoint is removed
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int hours = 0;
+	int minutes = 0;
+//	int seconds = 0;
+//	char period[5] = { 0 }; // Longest period is four characters long
+	char timezone[6] = { 0 }; // Longest timezone abbreviation is five characters long
+	printf("Enter the 24 hour time in international standard notation \n including the timezone abbreviation: \n");
+	printf("hh:mm <zone> (e.g., 15:38 CST) \n");
+	_flushall();
+	scanf("%d:%d %5[A-Z]s", &hours, &minutes, timezone);
+	printf("The current time is...\n%02d%02d hours in the %s zone.\n", hours, minutes, timezone);
+
+	return 0;
+}
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#define BUFF_SIZE 23
+
+int main(void)
+{
+	
+	char first[BUFF_SIZE];
+	char middle[BUFF_SIZE];
+	char last[BUFF_SIZE];
+	printf("Enter a first, middle, and last name separated by spaces:  ");
+	scanf("%22s%*c%22s%*c%22s", first, middle, last);
+	
+
+	int x = 0;
+	int y = 0;
+	int z = 0;
+	printf("Rudimentary Calculator:\nEnter three numbers separated by plus signs (+).\n");
+	scanf("%d+%d+%d", &x, &y, &z);
+	printf("x = %12d \ny = %12d \nz = %12d\nsum = %10d\n", x, y, z, x+y+z);
+
+	return 0;
+}#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int year = 0;
+	char month[4] = { 0 };
+	int date = 0;
+
+	fprintf(stdout, "Input the current long format date as YYYY-Mmm-DD\n");
+	fprintf(stdout, "(e.g., 2015-Sep-08)\n");
+	fscanf(stdin, "%d-%3s-%d", &year, month, &date);
+
+	fprintf(stdout, "%-13s%-s %d, %d\n", "AMURICA:  ", month, date, year);
+	fprintf(stdout, "%-13s%-d de %s de %d\n", "Spain:  ", date, month, year);
+	fprintf(stdout, "%-13s%-d%c%s%c%d%c\n", "Japan:  ", year, 4, month, 4, date, 4);
+	fprintf(stdout, "%-13s%-d %s %d\n", "All Others:  ", date, month, year);
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+	double legA = 0;
+	double legB = 0;
+	double hypotenuse = 0;
+
+	printf("Input the length of leg A and leg B for your right triangle. \n");
+	printf("Separate the two lengths with a space.  (e.g., 1.3 9.7) \n");
+	_flushall();
+	scanf("%lf %lf", &legA, &legB);
+
+	hypotenuse = sqrt((legA*legA) + (legB*legB));
+	printf("Your hypotenuse is %.2f. \n", hypotenuse);
+
+	return 0;
+}
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+	/* Initialize variables here */
+	double rightTriangleLegA = 0;
+	double rightTriangleLegB = 0;
+	double rightTriangleHypotenuse = 0;
+
+	/* Input values and assign to variables here*/
+	printf("Input the length of leg A and leg B for your right triangle. \n"); // User prompt
+	printf("Separate the two lengths with a space.  (e.g., 1.3 3.7) \n"); // User prompt
+	_flushall(); // Flushes all open streams while leaving them open
+	scanf("%lf %lf", &rightTriangleLegA, &rightTriangleLegB);
+
+	/* INPUT VALIDATION */
+	/* rightTriangleLegA > 0 tests that the user input was positive */
+	/* rightTriangleLegB > 0 tests that the user input was positive */
+	/* (relational test A) && (relational test B) tests that both conditions are True */
+	if ((rightTriangleLegA > 0) && (rightTriangleLegB > 0))
+	{
+		/* Place arithmetic hypotenuse calculation here */
+		rightTriangleHypotenuse = sqrt((rightTriangleLegA*rightTriangleLegA) + (rightTriangleLegB*rightTriangleLegB));
+//		rightTriangleHypotenuse = sqrt((pow(rightTriangleLegA, 2) + pow(rightTriangleLegB, 2))); 
+		/* double pow(double x, double y) returns x raised to the power of y (e.g., x^y) */
+		
+		/* Print the hypotenuse here */
+		printf("Your hypotenuse is %.2f. \n", rightTriangleHypotenuse);
+	}
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+	/* Initialize variables here */
+	int quadFormulaCoeficientA = 0;
+	int quadFormulaCoeficientB = 0;
+	int quadFormulaCoeficientC = 0;
+	double factorOne = 0;
+	double factorTwo = 0;
+
+	/* Input values and assign to variables here */
+	printf("Input the coeficients of a quadtric equation in the following format: \n");
+	printf("ax^2 + bx + c \n(e.g., 1x^2 + 3x + -4 \n");
+	scanf("%dx^2 + %dx + %d", &quadFormulaCoeficientA, &quadFormulaCoeficientB, &quadFormulaCoeficientC);
+
+	/* INPUT VALIDATION */
+	if ((quadFormulaCoeficientA != 0) && ((pow(quadFormulaCoeficientB, 2)) - (4*quadFormulaCoeficientA*quadFormulaCoeficientC)) > 0)
+	{
+		factorOne = (-quadFormulaCoeficientB + sqrt((pow(quadFormulaCoeficientB, 2)) - (4 * quadFormulaCoeficientA*quadFormulaCoeficientC))) / (2 * quadFormulaCoeficientA);
+		factorTwo = (-quadFormulaCoeficientB - sqrt((pow(quadFormulaCoeficientB, 2)) - (4 * quadFormulaCoeficientA*quadFormulaCoeficientC))) / (2 * quadFormulaCoeficientA);
+		printf("Your quadratic equation was:  %dx^2 + %dx + %d \n", quadFormulaCoeficientA, quadFormulaCoeficientB, quadFormulaCoeficientC);
+		printf("Your quadratic equation factored into:  \nx = %lf \nand \nx = %lf", factorOne, factorTwo);
+	}
+	
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	unsigned int userInput = 0;
+	unsigned int bitPositionToFlip = 0;
+	unsigned int inputMask = 1;
+	unsigned int resultMask = 0;
+	unsigned int userOutput = 0;
+
+
+	printf("Enter an arbitrary value:  ");
+	scanf("%u", &userInput);
+	userOutput = userInput;
+
+	printf("What bit position would you like to flip? \n");
+	printf("Choose a number between 0 and %d. \n", ((sizeof(unsigned int) * 8) - 1));
+	scanf("%u", &bitPositionToFlip);
+	
+	if (bitPositionToFlip >= 0 && bitPositionToFlip <= ((sizeof(unsigned int) * 8) - 1))
+	{
+		inputMask = inputMask << bitPositionToFlip;
+	}
+	else
+	{
+		printf("\n\n\n***************************\n");
+		printf("Something has gone wrong \nwith the number you \nchose for the bit position. \n");
+		printf("***************************\n\n\n");
+		return -1; // Error code
+	}
+
+	userOutput = inputMask ^ userInput;
+
+	printf("You input:    %u \n", userInput);
+	printf("You flipped bit position #%u \n", bitPositionToFlip);
+	printf("This yielded: %u \n", userOutput);
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int deviceOneIP[4] = { 0 };
+	int deviceOneSubnetMask[4] = { 0 };
+
+	int networkID[4] = { 0 };
+	
+	/*
+	int deviceTwoIP[4] = { 0 };
+	int deviceTwoSubnetMask[4] = { 0 };
+	*/
+
+	printf("Enter Device 1's IP address and subnet mask \n");
+	printf("(e.g., 172.16.228.64 255.255.128.0 \n");
+	_flushall();
+
+	scanf("%d.%d.%d.%d %d.%d.%d.%d", &deviceOneIP[0], &deviceOneIP[1], &deviceOneIP[2], &deviceOneIP[3], &deviceOneSubnetMask[0], &deviceOneSubnetMask[1], &deviceOneSubnetMask[2], &deviceOneSubnetMask[3]);
+
+	/*
+	printf("Enter Device 2's IP address and CIDR notation subnet mask \n");
+	printf("(e.g., 172.16.231.103 172.16.192.0 \n");
+	_flushall();
+
+	scanf("%d.%d.%d.%d %d.%d.%d.%d", &deviceTwoIP[0], &deviceTwoIP[1], &deviceTwoIP[2], &deviceTwoIP[3], &deviceTwoSubnetMask[0], &deviceTwoSubnetMask[1], &deviceTwoSubnetMask[2], &deviceTwoSubnetMask[3]);
+	*/
+
+	printf("Device 1's IP addresss is %d.%d.%d.%d and the subnet is %d.%d.%d.%d \n", deviceOneIP[0], deviceOneIP[1], deviceOneIP[2], deviceOneIP[3], deviceOneSubnetMask[0], deviceOneSubnetMask[1], deviceOneSubnetMask[2], deviceOneSubnetMask[3]); // DEBUGGING
+//	printf("Device 2's IP addresss is %d.%d.%d.%d and the subnet is %d.%d.%d.%d \n", deviceTwoIP[0], deviceTwoIP[1], deviceTwoIP[2], deviceTwoIP[3], deviceTwoSubnetMask[0], deviceTwoSubnetMask[1], deviceTwoSubnetMask[2], deviceTwoSubnetMask[3]); // DEBUGGING
+
+		networkID[0] = deviceOneIP[0] & deviceOneSubnetMask[0];
+		networkID[1] = deviceOneIP[1] & deviceOneSubnetMask[1];
+		networkID[2] = deviceOneIP[2] & deviceOneSubnetMask[2];
+		networkID[3] = deviceOneIP[3] & deviceOneSubnetMask[3];
+
+		printf("Device 1 is on network ID:  %d.%d.0.0 \n", networkID[0], networkID[1]);
+
+//	printf("Device 1's network ID is:  %d.%d.%d.%d \n", deviceOneIP[0] & deviceOneSubnetMask[0], deviceOneIP[1] & deviceOneSubnetMask[1], deviceOneIP[2] & deviceOneSubnetMask[2], deviceOneIP[3] & deviceOneSubnetMask[3]);
+
+		if (networkID[0] == 172 && networkID[1] == 16)
+		{
+			printf("This IP is on your network. \n");
+		}
+		else
+		{
+			printf("This IP is *NOT* on your network. \n");
+		}
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <inttypes.h> // Contains definitions of uint8_t's
+
+int main(void)
+{
+	int deviceOneIP[4] = { 0 };
+	int deviceOneSubnetMask[4] = { 0 };
+	int networkID[4] = { 0 };
+	uint8_t deviceNewIP[4] = { 0 };
+	
+	printf("Enter Device 1's IP address and subnet mask \n");
+	printf("(e.g., 172.16.228.64 255.255.128.0 \n");
+	_flushall();
+
+	scanf("%d.%d.%d.%d %d.%d.%d.%d", &deviceOneIP[0], &deviceOneIP[1], &deviceOneIP[2], &deviceOneIP[3], &deviceOneSubnetMask[0], &deviceOneSubnetMask[1], &deviceOneSubnetMask[2], &deviceOneSubnetMask[3]);
+
+	_flushall();
+
+	printf("Device 1's IP addresss is %d.%d.%d.%d and the subnet is %d.%d.%d.%d \n", deviceOneIP[0], deviceOneIP[1], deviceOneIP[2], deviceOneIP[3], deviceOneSubnetMask[0], deviceOneSubnetMask[1], deviceOneSubnetMask[2], deviceOneSubnetMask[3]); // DEBUGGING
+
+	networkID[0] = deviceOneIP[0] & deviceOneSubnetMask[0];
+	networkID[1] = deviceOneIP[1] & deviceOneSubnetMask[1];
+	networkID[2] = deviceOneIP[2] & deviceOneSubnetMask[2];
+	networkID[3] = deviceOneIP[3] & deviceOneSubnetMask[3];
+
+	printf("Device 1 is on network ID:  %u.%u.%u.%u \n", networkID[0], networkID[1], networkID[2], networkID[3]);
+
+	printf("Now input a new host ID to place on this network. \n");
+	printf("(e.g., %u.%u.%u.1 \n", networkID[0], networkID[1], networkID[2]);
+	_flushall();
+	scanf("%u.%u.%u.%u", &deviceNewIP[0], &deviceNewIP[1], &deviceNewIP[2], &deviceNewIP[3]);
+
+	deviceNewIP[0] = deviceNewIP[0] | networkID[0];
+	deviceNewIP[1] = deviceNewIP[1] | networkID[1];
+	deviceNewIP[2] = deviceNewIP[2] | networkID[2];
+	deviceNewIP[3] = deviceNewIP[3] | networkID[3];
+
+	printf("Your new IP address is:  %u.%u.%u.%u \n", deviceNewIP[0], deviceNewIP[1], deviceNewIP[2], deviceNewIP[3]);
+
+	return 0;
+}
+///////////////////////////////////////////////////////////////////////////
+////////////////////// DEMONSTRATION LAB I.1.g-3 //////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Initialize two char arrays (input and output) of equal dimension
+// Safely read a user-input string into your 'input' char array
+// Initialize a different char variable to be your mask
+// XOR each element (except the last) against that char mask
+// Store the obfuscated XOR results in the output array
+// Print both arrays using a safe string function
+///////////////////////////////////////////////////////////////////////////
+
+
+#include <stdio.h>
+#include <limits.h>
+#define solution1 // This code contains three different "if" statement solutions 
+
+int main(void)
+{
+	printf("Maximum value of char is %d. \n", UCHAR_MAX); // DEBUGGING
+	unsigned char inputBuff[256] = { 0 };
+	unsigned char outputBuff[256] = { 0 };
+//	unsigned char obfuscationMask = UCHAR_MAX - 0xFE; // Subtract a value from CHAR_MAX to ensure I don't exceed CHAR_MAX
+	unsigned char obfuscationMask = 125;
+	int i = 0; // Used to iterate through a for loop
+	
+	printf("Input a string:  \n");
+	fgets(inputBuff, sizeof(inputBuff), stdin);
+
+	for (i = 0; i < sizeof(outputBuff); i++)
+	{
+#ifdef solution1
+		if (inputBuff[i]) // Stops the for loop from XOR'ing any null terminators
+#endif
+#ifdef solution2
+		if (inputBuff[i] != 0) // This would also work
+#endif
+#ifdef solution3
+		if (inputBuff[i] > 0) // This would also work since inputBuff is an unsigned char array
+#endif
+		{
+			outputBuff[i] = inputBuff[i] ^ obfuscationMask;
+//			printf("%d: %u \n", i, outputBuff[i]); // DEBUGGING
+		}
+	}
+	outputBuff[sizeof(outputBuff) - 1] = 0; // Manually null-terminates this string
+
+	printf("You typed:  \n\t");
+	puts(inputBuff);
+	printf("Obfuscated:  \n\t");
+	puts(outputBuff);
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <inttypes.h>
+#define solution2
+/*
+There are multiple solutions to this Lab.
+Change solution1 to solution2 to see the next example.
+*/
+
+int main(void)
+{
+	uint8_t flagRegisters[4] = { 0x0, 0xFF, 0x00, 0xFF };
+	int flipAFlag = 0;
+
+	printf("\n\nThis is the current state of the flags: \n");
+#ifdef solution1
+	printf("Flag1:  %d \n", flagRegisters[0] == 0xFF);
+	printf("Flag2:  %d \n", flagRegisters[1] == 0xFF);
+	printf("Flag3:  %d \n", flagRegisters[2] == 0xFF);
+	printf("Flag4:  %d \n", flagRegisters[3] == 0xFF);
+#endif
+
+#ifdef solution2
+	int i = 0;
+	for (i = 0; i < 4; i++)
+	{
+		printf("Flag%d:  %d \n", i + 1, flagRegisters[i] == 0xFF);
+	}
+#endif
+
+	printf("Which flag would you like to flip?  ");
+	scanf("%d", &flipAFlag);
+
+	if (flipAFlag >= 1 && flipAFlag <= 4)
+	{
+		flagRegisters[flipAFlag - 1] = ~flagRegisters[flipAFlag - 1];
+	}
+	else
+	{
+		printf("You chose poorly... \n");
+		return -1;
+	}
+
+	printf("\n\nThe flags have been modified to: \n");
+#ifdef solution1
+	printf("Flag1:  %d \n", flagRegisters[0] == 0xFF);
+	printf("Flag2:  %d \n", flagRegisters[1] == 0xFF);
+	printf("Flag3:  %d \n", flagRegisters[2] == 0xFF);
+	printf("Flag4:  %d \n", flagRegisters[3] == 0xFF);
+#endif
+
+#ifdef solution2
+	for (i = 0; i < 4; i++)
+	{
+		printf("Flag%d:  %d \n", i + 1, flagRegisters[i] == 0xFF);
+	}
+#endif
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <limits.h>
+
+int main(void)
+{
+	unsigned char IPaddress[4] = { 0 };
+	unsigned char bitMask[4] = { CHAR_MAX, CHAR_MAX, CHAR_MAX, CHAR_MAX };
+	int CIDRnotation = 0;
+
+	printf("Input an IP address with a CIDR notation subnet mask \n");
+	printf("(e.g., 172.16.128.42/24 \n");
+
+	_flushall();
+	scanf("%hd.%hd.%hd.%hd/%d", &IPaddress[0], &IPaddress[1], &IPaddress[2], &IPaddress[3], &CIDRnotation);
+
+	printf("Your IP is %hd.%hd.%hd.%hd/%hd \n", IPaddress[0], IPaddress[1], IPaddress[2], IPaddress[3], CIDRnotation); // DEBUGGING
+
+	if (CIDRnotation > 24 && CIDRnotation < 32)
+	{
+		bitMask[3] = bitMask[3] << (32 - CIDRnotation);
+//		bitMask[2] = bitMask[2] << (CIDRnotation - 16);
+//		bitMask[1] = bitMask[1] << (CIDRnotation - 8);
+//		bitMask[0] = bitMask[0] << (CIDRnotation);
+	}
+	else if (CIDRnotation > 16 && CIDRnotation <= 24)
+	{
+		bitMask[3] = 0;
+		bitMask[2] = bitMask[2] << (24 - CIDRnotation);
+//		bitMask[1] = bitMask[1] << (CIDRnotation - 8);
+//		bitMask[0] = bitMask[0] << (CIDRnotation);
+	}
+	else if (CIDRnotation > 8 && CIDRnotation <= 16)
+	{
+		bitMask[3] = 0;
+		bitMask[2] = 0;
+		bitMask[1] = bitMask[1] << (16 - CIDRnotation);
+//		bitMask[0] = bitMask[0] << (CIDRnotation);
+	}
+	else if (CIDRnotation > 0 && CIDRnotation <= 8)
+	{
+		bitMask[3] = 0;
+		bitMask[2] = 0;
+		bitMask[1] = 0;
+		bitMask[0] = bitMask[0] << (8 - CIDRnotation);
+	}
+	else
+	{
+		printf("Something happened to the CIDR input! \n");
+		return -1;
+	}
+
+	printf("Your bit mask is %d.%d.%d.%d \n", bitMask[0], bitMask[1], bitMask[2], bitMask[3]); // DEBUGGING
+
+	return 0;
+}
+///////////////////////////////////////////////////////////////////////////////
+/////////////////////////DEMONSTRATION LAB I.1.g-6 ////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+// Input a uint32_t
+// Drop the four right-most bits off the uint32_t using a Bitwise Shift Right
+// Replace the four left-most bits of the uint32_t with the dropped bits
+// Print the I/O in uppercase Hexadecimal, field width 8, leading zeros
+///////////////////////////////////////////////////////////////////////////////
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <inttypes.h>
+#define solution4 // This source file contains four solutions to the given Demonstration Lab
+#ifdef solution3
+#include <math.h>
+#endif
+
+int main(void)
+{
+	uint32_t inputNumber = 0;
+	uint32_t transitionNumber = 0;
+	printf("Input a positive number:  ");
+	_flushall();
+	scanf("%u", &inputNumber);
+
+	printf("Your number was %u (Hex: 0x%08X) \n", inputNumber, inputNumber);
+
+#ifdef solution1
+	{
+		printf("Solution #1: \n");
+		printf("\tA. Copy the original value to a temp. \n");
+		transitionNumber = inputNumber;
+
+		printf("\tB. Bit shift the original right by four. \n");
+		inputNumber = inputNumber >> 4;
+
+		printf("\tC. Bit shift the copy left by 32 - 4 = 28. \n");
+		transitionNumber = transitionNumber << ((sizeof(transitionNumber) * 8) - 4);
+
+		printf("\tD. OR the bit shifted original and the bit shifted copy. \n");
+		inputNumber = inputNumber | transitionNumber;
+
+		printf("\tE. Profit. \n");
+	}
+#endif
+
+#ifdef solution2
+	{
+		printf("Solution #2 \n");
+		printf("\tA. Bitmask the last four bits from the original into a temp. \n");
+		transitionNumber = inputNumber & 0x0000000F; // Each Hexadecimal F masks four binary bits
+
+		printf("\tB. Bit shift the temp by 32 - 4 = 28 to put it in position. \n");
+		transitionNumber = transitionNumber << ((sizeof(transitionNumber) * 8) - 4);
+
+		printf("\tC. Bit shift the original right by 4 to make room. \n");
+		inputNumber = inputNumber >> 4;
+
+		printf("\tD. OR the bit shifted temp and the bit shifted original. \n");
+		inputNumber = inputNumber | transitionNumber;
+
+		printf("\tE. Profit. \n");
+	}
+#endif
+
+#ifdef solution3
+	{
+		printf("Solution #3 \n");
+		printf("\tA. Bitmask the last four bits from the original into a temp. \n");
+//		transitionNumber = inputNumber & 0x0000000F; // Each Hexadecimal F masks four binary bits
+		transitionNumber = inputNumber; // Bitmasking not necessary; This feels dangerous though
+		/* Step B will effectively overflow the leading bits of the temp variable using multiplication */
+
+		printf("\tB. Multiply the temp by 2^(32 - 4) = 2^28 to put it in position. \n");
+		printf("\tNOTE:  This is the same as a Bitwise Shift Left of 28 (e.g., x << 28). \n");
+		transitionNumber = transitionNumber * pow((double)2,(double)((sizeof(transitionNumber) * 8) - 4));
+
+		printf("\tC. Bit shift the original right by 4 to make room. \n");
+		inputNumber = inputNumber >> 4;
+
+		printf("\tD. OR the bit shifted temp and the bit shifted original. \n");
+		inputNumber = inputNumber | transitionNumber;
+
+		printf("\tE. Profit. \n");
+	}
+#endif
+
+#ifdef solution4
+	{
+		printf("(Fancy) Solution #4 \n");
+		printf("\tA. Perform a Bitwise OR on inline Bitwise Shift Rights and Shift Lefts.\n");
+		inputNumber = (inputNumber >> 4) | (inputNumber << ((sizeof(transitionNumber) * 8) - 4));
+		printf("\tB. Profit. \n");
+	}
+#endif
+
+	printf("Your new number is %u (Hex: 0x%08X) \n", inputNumber, inputNumber);
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+//////////////////////////////////////////////
+// This program takes user input.
+// That user input is treated as a flag field
+//     indicating one or more forms of energy.
+// The user input is checked against constant
+//     variables using a bitwise AND.
+// The results are printed in a human-readable
+//     format.
+//////////////////////////////////////////////
+
+int main(void)
+{
+	const uint8_t flagKinetic = 128;		// 10000000
+	const uint8_t flagPotential = 64;		// 01000000
+	const uint8_t flagThermal = 32;			// 00100000
+	const uint8_t flagChemical = 16;		// 00010000
+	const uint8_t flagElectrical = 8;		// 00001000
+	const uint8_t flagElectrochemical = 4;	// 00000100
+	const uint8_t flagSound = 2;			// 00000010
+	const uint8_t flagNuclear = 1;			// 00000001
+
+	uint8_t energyForms = 0;
+
+	do
+	{
+		printf("Enter a number 1-255 which reprents the energy forms \nany particular object possesses. \nEnter 0 to exit. \n");
+		_flushall();
+		scanf("%"SCNu8, &energyForms);
+		printf("Your object:             %"PRIu8"\n", energyForms);
+		printf("Kinetic Energy:          %d \n", (energyForms & flagKinetic) > 0);
+		printf("Potential Energy:        %d \n", (energyForms & flagPotential) > 0);
+		printf("Thermal Energy:          %d \n", (energyForms & flagThermal) > 0);
+		printf("Chemical Energy:         %d \n", (energyForms & flagChemical) > 0);
+		printf("Electrical Energy:       %d \n", (energyForms & flagElectrical) > 0);
+		printf("Electrochemical Energy:  %d \n", (energyForms & flagElectrochemical) > 0);
+		printf("Sound Energy:            %d \n", (energyForms & flagSound) > 0);
+		printf("Nuclear Energy:          %d \n\n\n", (energyForms & flagNuclear) > 0);
+	} while (energyForms && energyForms != 48);
+
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+//////////////////////////////////////////////
+// This program takes user input.
+// That user input is treated as a flag field
+//     indicating one or more forms of energy.
+// The user input is checked against constant
+//     variables using a bitwise AND.
+// The results are printed in a human-readable
+//     format.
+// Then the program prompts the user for a
+//     flag to turn off.
+// The results are printed in a human-readable
+//     format.
+//////////////////////////////////////////////
+
+int main(void)
+{
+	const uint8_t flagKinetic = 128;		// 10000000
+	const uint8_t flagPotential = 64;		// 01000000
+	const uint8_t flagThermal = 32;			// 00100000
+	const uint8_t flagChemical = 16;		// 00010000
+	const uint8_t flagElectrical = 8;		// 00001000
+	const uint8_t flagElectrochemical = 4;	// 00000100
+	const uint8_t flagSound = 2;			// 00000010
+	const uint8_t flagNuclear = 1;			// 00000001
+
+	uint8_t energyForms = 0;
+
+	printf("Enter a number 1-255 which reprents the energy forms \nany particular object possesses. \nEnter 0 to exit. \n");
+	_flushall();
+	scanf("%"SCNu8, &energyForms);
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+	
+	uint8_t setSomeFlags = 0x0;
+	printf("Enter a hex number.\n(e.g., 0xD4)\n");
+	_flushall();
+	scanf("%x"SCNu8, &setSomeFlags);
+	printf("You entered %x which is really %u \n", setSomeFlags, setSomeFlags); // DEBUGGING
+	energyForms = energyForms | setSomeFlags; // Bitwise OR turning on "setSomeFlags" bits in "energyFlags"
+
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////
+///////////////////// PERFORMANCE LAB I.1.g-3 ////////////////////////
+///////////////// Brute force an obfuscated string ///////////////////
+//////////////////////////////////////////////////////////////////////
+// C:\Temp\Obfuscated?.txt contains an obfuscated string
+//     ? represents the fact that multiple files exist, (1 - 14)
+//     Modify the "#define File?" line below to access different files
+//     The ? number equates to the Obfuscated?.txt file that is opened
+// The original string was XOR'd against a four (4) bit mask stored in
+//     an unsigned char
+// Shell code has been provided that already:
+//     Safely read the file contents into a char array
+//     Loops through each element of the char array
+// Fill in the shell code, as documented, to brute force this
+//     obfuscated string
+// There are sections of this shell code that contain a comment block
+//     specifying remaining code requirements.  Replace the comment
+//     block with the code required.
+// Visually scan the results for a human-readable string
+//////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#define BUFF_SIZE 256
+#define MAX_MASKS 14
+#define File1
+
+int main(void)
+{
+	unsigned char cypherText[BUFF_SIZE] = { 0 }; // Stores the obfuscated text from the C:\Temp file
+	unsigned char clearText[BUFF_SIZE] = { 0 }; // Stores the XOR'd cypherText 
+	unsigned char xorMask = 0; // Stores the mask used to XOR the cypher text read from the file
+	unsigned char inputChar = 255; // Temporarily stores file input character by character on its way to the cypher text array
+	unsigned int i = 0; // Used to iterate through a loop
+	unsigned int j = 0; // Used to iterate through a loop
+	FILE * obfuscatedFile; // File pointer used to store the memory address of the opened Obfuscated?.txt file
+#ifdef File1
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated1.txt", "r"); // Opens Obfuscated1.txt as read-only.  "#define File1" to access this file.
+#endif
+#ifdef File2
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated2.txt", "r"); // Opens Obfuscated2.txt as read-only.  "#define File2" to access this file.
+#endif
+#ifdef File3
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated3.txt", "r"); // Opens Obfuscated3.txt as read-only.  "#define File3" to access this file.
+#endif
+#ifdef File4
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated4.txt", "r"); // Opens Obfuscated4.txt as read-only.  "#define File4" to access this file.
+#endif
+#ifdef File5
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated5.txt", "r"); // Opens Obfuscated5.txt as read-only.  "#define File5" to access this file.
+#endif
+#ifdef File6
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated6.txt", "r"); // Opens Obfuscated6.txt as read-only.  "#define File6" to access this file.
+#endif
+#ifdef File7
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated7.txt", "r"); // Opens Obfuscated7.txt as read-only.  "#define File7" to access this file.
+#endif
+#ifdef File8
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated8.txt", "r"); // Opens Obfuscated8.txt as read-only.  "#define File8" to access this file.
+#endif
+#ifdef File9
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated9.txt", "r"); // Opens Obfuscated9.txt as read-only.  "#define File9" to access this file.
+#endif
+#ifdef File10
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated10.txt", "r"); // Opens Obfuscated10.txt as read-only.  "#define File10" to access this file.
+#endif
+#ifdef File11
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated11.txt", "r"); // Opens Obfuscated11.txt as read-only.  "#define File11" to access this file.
+#endif
+#ifdef File12
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated12.txt", "r"); // Opens Obfuscated12.txt as read-only.  "#define File12" to access this file.
+#endif
+#ifdef File13
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated13.txt", "r"); // Opens Obfuscated13.txt as read-only.  "#define File13" to access this file.
+#endif
+#ifdef File14
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated14.txt", "r"); // Opens Obfuscated14.txt as read-only.  "#define File14" to access this file.
+#endif
+
+	/* Verify the file is open */
+	if (obfuscatedFile) // File pointer is NOT NULL
+	{
+		/* Stops at newlines (10), line feeds (13), End of File (EOF), empty characters (inputChar), and verifies there's room at the end for a newline and NUL termination */
+		while (inputChar != 10 && inputChar != 13 && inputChar != EOF && inputChar && i < (BUFF_SIZE - 1))
+		{
+			inputChar = fgetc(obfuscatedFile); // Reads one character from the open file into inputChar
+			cypherText[i] = inputChar; // Assigns inputChar into an element of the cypher text array
+			i++; // Increments the counter used to iterate through the array
+		}
+		cypherText[BUFF_SIZE - 1] = '\0'; // Manually null terminates the string... for safety
+	}
+	else // File pointer is NULL
+	{
+		fprintf(stderr, "Error:  Unable to input file! \n"); // Prints and error statement
+		return -1; // Ends main() and returns a value of -1 to indicate an error
+	}
+
+	/* Iterate all possible	XOR mask values for each cypher text array */
+	for (xorMask = 1; xorMask <= MAX_MASKS; xorMask++) // Iterates through xorMask (1, 2, 3, ... MAX_MASKS).  (see "#define MAX_MASKS")
+	{
+		for (j = 0; j < strlen(cypherText); j++) // Iterates through all elements of the cypherText array
+		{
+			if (cypherText[j] != 0 && cypherText[j] != 10 && cypherText[j] != 13) // Skips XOR'ing NULL, newline, and line feed characters...
+			{
+				clearText[j] = cypherText[j] ^ xorMask; // ...and XORs all the rest against xorMASK, storing the result in the clearText array
+			}
+			else
+			{
+				clearText[j] = cypherText[j]; // NULL, newline, and line feed characters are not XOR'd.  Instead, they are copied into the clearText array directly.
+			}
+		}
+		printf("\nMask #%d produced the string: \n\t%s", xorMask, clearText); // This line is printed once for each of the XOR masks attempted on the cypher text
+	}
+
+	/* Print the Cleartext */
+//	puts(clearText1); // DEBUGGING
+	/* Print the Cyphertext */
+//	puts(cypherText); // DEBUGGING
+	/* Close the open file */
+	fclose(obfuscatedFile); // Closes the open file
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#define NUMBER_OF_STRINGS 14
+
+int main(void)
+{
+//	unsigned char clearText1[] = "Test."; // DEBUGGING
+	unsigned char clearText1[] = "On August 1, 1907, the U.S. Army Signal Corps formed an Aeronautical Division.";
+	unsigned char clearText2[] = "On June 20, 1941, the Department of War created the Army Air Forces (AAF) as its aviation element.";
+	unsigned char clearText3[] = "The Air Force is the youngest of all five services.";
+	unsigned char clearText4[] = "The Air Force became a separate service on September 18, 1947.";
+	unsigned char clearText5[] = "President Harry S. Truman signed the National Security Act of 1947 to make the Air Force a separate service.";
+	unsigned char clearText6[] = "The U.S. Army Signal Corps began testing its first airplane at Fort Myer, Virginia on August 20, 1908.";
+	unsigned char clearText7[] = "The 1st Aero Squadron, today designated the 1st Reconnaissance Squadron, is the first military unit of the U.S. Army devoted exclusively to aviation.";
+	unsigned char clearText8[] = "When World War I broke out in Europe in August 1914, the 1st Aero Squadron represented the entire tactical air strength of the U.S. Army.";
+	unsigned char clearText9[] = "When World War I broke out in Europe in August 1914, the 1st Aero Squadron consisted of 12 officers, 54 enlisted men, and six aircraft.";
+	unsigned char clearText10[] = "The Army Reorganization Act of 1920 made the Air Service a combatant arm of the Army.";
+	unsigned char clearText11[] = "During most of the 1920s, the total offensive strength of the Air Service in the United States consisted of one pursuit, one attack and one bombardment group.";
+	unsigned char clearText12[] = "During most of the 1920s, the Air Service focused initially on observation and pursuit aviation.";
+	unsigned char clearText13[] = "In the 1920s, the Air Service concentrated flying training in Texas.";
+	unsigned char clearText14[] = "The Air Corps Act of 1926 changed the name of the Air Service to Air Corps, but did not alter its status as a combatant arm of the U.S. Army.";
+//	unsigned char clearText15[] = "In August 1926 the Army established the Air Corps Training Center in San Antonio, TX.";
+	unsigned char * clearTextList[NUMBER_OF_STRINGS] = {clearText1, clearText2, clearText3, clearText4, clearText5, clearText6, clearText7, clearText8, clearText9, clearText10, clearText11, clearText12, clearText13, clearText14};
+	unsigned char cypherText[256] = { 0 };
+//	unsigned char xorMask = 15;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	FILE * obfuscatedFile; // File pointer
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated.txt", "w");
+
+	/* Verify the file is open */
+	if (obfuscatedFile)
+	{
+		/* Obfuscate the Cleartext */
+		for (i = 0; i < NUMBER_OF_STRINGS; i++)
+		{
+			if (clearTextList[i])
+			{
+//				printf("Size of clearTextList[i] is %u \nSize of clearTextList[i][j] is %u \n", sizeof(clearTextList[i]), sizeof(clearTextList[i][j]));
+//				printf("The string length of clearTextList[i][j] is %u \n", strlen(clearTextList[i]));
+				for (j = 0; j < strlen(clearTextList[i]) && j < 253; j++) // strlen ensures we won't run over clearTextList[i] and < 253 ensures there's room in cypherText for a \n and \0
+				{
+					cypherText[j] = (unsigned char)clearTextList[i][j] ^ ((unsigned char)i + 1);
+					if (j == (strlen(clearTextList[i]) - 1) || j == 252)
+					{
+						cypherText[j + 1] = '\n'; // Manually adds a newline.  fputs() does not include newlines.
+						cypherText[j + 2] = '\0'; // Manually adds a null character since the previous statement overwrites it with a newline.
+					}
+				}
+				fputs(cypherText, obfuscatedFile);
+			}
+		}
+	}
+	else
+	{
+		fprintf(stderr, "Error:  Unable to input file! \n");
+		return -1;
+	}
+
+	/* Print the Cleartext */
+//	puts(clearText1); // DEBUGGING
+	/* Print the Cyphertext */
+//	puts(cypherText); // DEBUGGING
+	/* Close the open file */
+	fclose(obfuscatedFile); // Closes the open file
+
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////
+///////////////////// PERFORMANCE LAB I.1.g-3 ////////////////////////
+///////////////// Brute force an obfuscated string ///////////////////
+//////////////////////////////////////////////////////////////////////
+// C:\Temp\Obfuscated?.txt contains an obfuscated string
+//     ? represents the fact that multiple files exist, (1 - 14)
+//     Modify the "#define File?" line below to access different files
+//     The ? number equates to the Obfuscated?.txt file that is opened
+// The original string was XOR'd against a four (4) bit mask stored in
+//     an unsigned char
+// Shell code has been provided that already:
+//     Safely read the file contents into a char array
+//     Loops through each element of the char array
+// Fill in the shell code, as documented, to brute force this
+//     obfuscated string
+// There are sections of this shell code that contain a comment block
+//     specifying remaining code requirements.  Replace the comment
+//     block with the code required.
+// Visually scan the results for a human-readable string
+//////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#define BUFF_SIZE 256
+#define MAX_MASKS 14
+#define File1
+
+int main(void)
+{
+	unsigned char cypherText[BUFF_SIZE] = { 0 }; // Stores the obfuscated text from the C:\Temp file
+	unsigned char clearText[BUFF_SIZE] = { 0 }; // Stores the XOR'd cypherText 
+	unsigned char xorMask = 0; // Stores the mask used to XOR the cypher text read from the file
+	unsigned char inputChar = 255; // Temporarily stores file input character by character on its way to the cypher text array
+	unsigned int i = 0; // Used to iterate through a loop
+	unsigned int j = 0; // Used to iterate through a loop
+	FILE * obfuscatedFile; // File pointer used to store the memory address of the opened Obfuscated?.txt file
+#ifdef File1
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated1.txt", "r"); // Opens Obfuscated1.txt as read-only.  "#define File1" to access this file.
+#endif
+#ifdef File2
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated2.txt", "r"); // Opens Obfuscated2.txt as read-only.  "#define File2" to access this file.
+#endif
+#ifdef File3
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated3.txt", "r"); // Opens Obfuscated3.txt as read-only.  "#define File3" to access this file.
+#endif
+#ifdef File4
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated4.txt", "r"); // Opens Obfuscated4.txt as read-only.  "#define File4" to access this file.
+#endif
+#ifdef File5
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated5.txt", "r"); // Opens Obfuscated5.txt as read-only.  "#define File5" to access this file.
+#endif
+#ifdef File6
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated6.txt", "r"); // Opens Obfuscated6.txt as read-only.  "#define File6" to access this file.
+#endif
+#ifdef File7
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated7.txt", "r"); // Opens Obfuscated7.txt as read-only.  "#define File7" to access this file.
+#endif
+#ifdef File8
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated8.txt", "r"); // Opens Obfuscated8.txt as read-only.  "#define File8" to access this file.
+#endif
+#ifdef File9
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated9.txt", "r"); // Opens Obfuscated9.txt as read-only.  "#define File9" to access this file.
+#endif
+#ifdef File10
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated10.txt", "r"); // Opens Obfuscated10.txt as read-only.  "#define File10" to access this file.
+#endif
+#ifdef File11
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated11.txt", "r"); // Opens Obfuscated11.txt as read-only.  "#define File11" to access this file.
+#endif
+#ifdef File12
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated12.txt", "r"); // Opens Obfuscated12.txt as read-only.  "#define File12" to access this file.
+#endif
+#ifdef File13
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated13.txt", "r"); // Opens Obfuscated13.txt as read-only.  "#define File13" to access this file.
+#endif
+#ifdef File14
+	obfuscatedFile = fopen("C:\\Temp\\Obfuscated14.txt", "r"); // Opens Obfuscated14.txt as read-only.  "#define File14" to access this file.
+#endif
+
+	/* Verify the file is open */
+	if (obfuscatedFile) // File pointer is NOT NULL
+	{
+		/* Stops at newlines (10), line feeds (13), End of File (EOF), empty characters (inputChar), and verifies there's room at the end for a newline and NUL termination */
+		while (inputChar != 10 && inputChar != 13 && inputChar != EOF && inputChar && i < (BUFF_SIZE - 1))
+		{
+			inputChar = fgetc(obfuscatedFile); // Reads one character from the open file into inputChar
+			cypherText[i] = inputChar; // Assigns inputChar into an element of the cypher text array
+			i++; // Increments the counter used to iterate through the array
+		}
+		cypherText[BUFF_SIZE - 1] = '\0'; // Manually null terminates the string... for safety
+	}
+	else // File pointer is NULL
+	{
+		fprintf(stderr, "Error:  Unable to input file! \n"); // Prints and error statement
+		return -1; // Ends main() and returns a value of -1 to indicate an error
+	}
+
+	/* Iterate all possible	XOR mask values for each cypher text array */
+	for (xorMask = 1; xorMask <= MAX_MASKS; xorMask++) // Iterates through xorMask (1, 2, 3, ... MAX_MASKS).  (see "#define MAX_MASKS")
+	{
+		for (j = 0; j < strlen(cypherText); j++) // Iterates through all elements of the cypherText array
+		{
+			if (cypherText[j] != 0 && cypherText[j] != 10 && cypherText[j] != 13) // Skips XOR'ing NULL, newline, and line feed characters...
+			{
+				/**************************************************************
+				Write a statement, or block of code, here that:
+				    A. Performs a Bitwise XOR between the unsigned char 
+					variable named "xorMask" and index "j" of the unsigned char
+					array named "cypherText"
+					B. Assign the result from the Bitwise XOR into index "j" of
+					the unsigned char array named "clearText"
+					C. Remove, or comment, the printf statement on the line
+					below.  It was only intended as a placeholder for the
+					statement, or block of code, you must write here.
+				**************************************************************/
+				printf("****\nReplace this statement with a Bitwise XOR\n****"); // ...and XORs all the rest against xorMASK, storing the result in the clearText array
+			}
+			else
+			{
+				/**************************************************************
+				Write a statement, or block of code, here that:
+				A. Assigns index "j" of the unsigned char array named
+				"cypherText" into index "j" of the unsigned char array named 
+				"clearText"
+				NOTE:  No XOR is necessary here because we want to preserve
+				any NULL, newline, or line feed characters.
+				**************************************************************/
+				printf("****\nReplace this statement with an assignment statement\n****");
+			}
+		}
+		printf("\nMask #%d produced the string: \n\t%s", xorMask, clearText); // This line is printed once for each of the XOR masks attempted on the cypher text
+	}
+
+	/* Print the Cleartext */
+//	puts(clearText1); // DEBUGGING
+	/* Print the Cyphertext */
+//	puts(cypherText); // DEBUGGING
+	/* Close the open file */
+	fclose(obfuscatedFile); // Closes the open file
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+//////////////////////////////////////////////
+// This program takes user input.
+// That user input is treated as a flag field
+//     indicating one or more forms of energy.
+// The user input is checked against constant
+//     variables using a bitwise AND.
+// The results are printed in a human-readable
+//     format.
+// Then the program prompts the user for a
+//     flag to turn off.
+// The results are printed in a human-readable
+//     format.
+//////////////////////////////////////////////
+
+int main(void)
+{
+	const uint8_t flagKinetic = 128;		// 10000000
+	const uint8_t flagPotential = 64;		// 01000000
+	const uint8_t flagThermal = 32;			// 00100000
+	const uint8_t flagChemical = 16;		// 00010000
+	const uint8_t flagElectrical = 8;		// 00001000
+	const uint8_t flagElectrochemical = 4;	// 00000100
+	const uint8_t flagSound = 2;			// 00000010
+	const uint8_t flagNuclear = 1;			// 00000001
+
+	uint8_t energyForms = 0;
+
+	printf("Enter a number 1-255 which reprents the energy forms \nany particular object possesses. \nEnter 0 to exit. \n");
+	_flushall();
+	scanf("%"SCNu8, &energyForms);
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+	
+	uint8_t changeSomeFlags = 0x0;
+	printf("Enter a hex number that represents the flag you want to turn on.\n(e.g., 0xD4)\n");
+	_flushall();
+	scanf("%x"SCNu8, &changeSomeFlags);
+//	printf("You entered %x which is really %u \n", setSomeFlags, setSomeFlags); // DEBUGGING
+	energyForms = energyForms | changeSomeFlags; // Bitwise OR turning on "setSomeFlags" bits in "energyFlags"
+
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+
+	printf("Enter a hex number that represents the flag you want to turn off.\n(e.g., 0xD4)\n");
+	_flushall();
+	scanf("%x"SCNu8, &changeSomeFlags);
+	//	printf("You entered %x which is really %u \n", setSomeFlags, setSomeFlags); // DEBUGGING
+	energyForms &= ~changeSomeFlags; // Bitwise OR turning on "setSomeFlags" bits in "energyFlags"
+
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+
+	return 0;
+}
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <inttypes.h>
+
+int main(void)
+{
+	uint8_t octet1 = 0;
+	uint8_t octet2 = 0;
+	uint8_t octet3 = 0;
+	uint8_t octet4 = 0;
+	uint32_t fullIP = 0;
+
+	printf("Enter an IP address in dotted decimal format. \n(e.g. 172.16.142.97) \n");
+	_flushall();
+	scanf("%"SCNu8".%"SCNu8".%"SCNu8".%"SCNu8, &octet1, &octet2, &octet3, &octet4);
+
+	printf("%"PRIu8".%"PRIu8".%"PRIu8".%"PRIu8"\n", octet1, octet2, octet3, octet4);
+
+	fullIP = fullIP | octet1;
+	fullIP = fullIP << 8;
+	fullIP = fullIP | octet2;
+	fullIP = fullIP << 8;
+	fullIP = fullIP | octet3;
+	fullIP = fullIP << 8;
+	fullIP = fullIP | octet4;
+
+	printf("%02x%02x%02x%02x \n", octet1, octet2, octet3, octet4);
+	printf("%08x \n", fullIP);
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <inttypes.h>
+
+/* There are two solutions for this lab.  
+#define solution1 is the long way.  
+#define solution2 is the short way. */
+
+#define solution2
+
+int main(void)
+{
+	uint32_t userInput = 0;
+	uint32_t bitChecker = 0x01;
+
+	printf("Enter an integer:  ");
+	_flushall();
+	scanf("%u", &userInput);
+
+	bitChecker <<= ((sizeof(bitChecker) * 8) - 1);
+//	bitChecker <<= 31; // This is also acceptable considering we are reasonably assured how many bytes are taken up with a uint32_t
+
+#ifdef solution1
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+	fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+	bitChecker >>= 1;
+#endif
+
+#ifdef solution2
+	int i = 0;
+	for (i = 0; i < (sizeof(uint32_t) * 8); i++)
+	{
+		fprintf(stdout, "%d", (userInput & bitChecker) > 0);
+		bitChecker >>= 1;
+	}
+#endif
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////////////
+///////////////// DEMONSTRATION LAB I.2.A-1 ////////////////////////////
+////////////////////////////////////////////////////////////////////////
+// Initialize a char array to zero
+// Safely store a user-input string in that char array
+// Safely print the string *if* the first element is not equal to zero
+////////////////////////////////////////////////////////////////////////
+
+#define BUFF_SIZE 8
+#include <stdio.h>
+#define solution3 // There are multiple solutions to this Lab
+
+int main(void)
+{
+	char userInputString[BUFF_SIZE] = { 0 };
+	printf("Input a string: \n");
+	_flushall();
+	fgets(userInputString, BUFF_SIZE, stdin);
+	
+#ifdef solution1
+	if (userInputString[0] != 0)
+	{
+		fputs(userInputString, stdout);
+	}
+#endif
+
+#ifdef solution2
+	if (userInputString[0])
+	{
+		fputs(userInputString, stdout);
+	}
+#endif
+
+#ifdef solution3
+	if (*userInputString)
+	{
+		fputs(userInputString, stdout);
+	}
+#endif
+
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// DEMONSTRATION LAB I.2.A-Y ///////////////////////////////
+////////////////////////////////////// WHAT'S MY GPA? ////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// Input floats as course grades
+// Print an error on unrealistic input (e.g., -92, 113)
+// Continue taking input until 999 is entered
+// Convert all realistic input to grade point values:
+//     A (100-90), B (89-80), C (79-70), D (69-60), F (59-0)
+//     A == 4, B == 3, C == 2, D == 1, F == 0
+// Average the grade point values to determine the GPA
+// Print the GPA to two decimal places
+// Be sure you don't attempt to divide by 0
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+
+	/* Variable Initialization */
+	float gradeInput = 0;		// Temporarily holds user input
+	float currentTotal = 0;		// Used as GPA numerator
+	int numOfGrades = 0;		// Used as GPA denominator
+
+	/* User Input Loop */
+	do
+	{
+		printf("Enter a grade (999 to stop):  ");
+		_flushall();
+		scanf("%f", &gradeInput);
+//		printf("%.2f \n", gradeInput); // DEBUGGING
+
+		if (gradeInput <= 100 && gradeInput >= 90)		// A
+		{
+			currentTotal += 4;
+			numOfGrades++;
+		}
+		else if (gradeInput < 90 && gradeInput >= 80)	// B
+		{
+			currentTotal += 3;
+			numOfGrades++;
+		}
+		else if (gradeInput < 80 && gradeInput >= 70)	// C
+		{
+			currentTotal += 2;
+			numOfGrades++;
+		}
+		else if (gradeInput < 70 && gradeInput >= 60)	// D
+		{
+			currentTotal += 1;
+			numOfGrades++;
+		}
+		else if (gradeInput < 60 && gradeInput >= 0)	// E
+		{
+			numOfGrades++;
+		}
+		else if (gradeInput != 999)						// Error condition
+		{
+			printf("You entered an invalid grade. \n");
+		}
+	} 
+	while (gradeInput != 999);
+
+	if (numOfGrades)									// Protects against dividing by 0
+	{
+		printf("Your GPA is %.2f. \n", (float)currentTotal / numOfGrades);
+	}
+	
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// DEMONSTRATION LAB I.2.A-2 ////////////////////////////
+////////////////////////////////////// Even It Out ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+// Input a number from the user
+// Determine if the number is even or odd utilizing the "mod" operator
+// Utilizing an IF-ELSE statement:
+//     If the number is odd, multiply the number by 2, store the result in the
+//         original variable, and print the new number
+//     If the number is even, say so
+// BONUS:  Determine if the number is odd or even utilizaing a bitwise operator
+//     instead
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#define solution1 // Available choices:  solution1, solution2, solution3, and bonus_solution
+
+int main(void)
+{
+	int userInputNumber = 0;
+	
+	printf("Input a number:  \n");
+	_flushall();
+	scanf("%d", &userInputNumber);
+
+#ifdef solution1
+	if (userInputNumber % 2 != 0) // If there is a remainder from num / 2 then it, by definition, is odd
+	{
+		/* If the number is odd, multiply the number by 2 and store the result in the original variable... */
+		userInputNumber = userInputNumber * 2;
+		/* ...and print the new number */
+		printf("The number was odd but I made it even. \nThe new number is %d. \n", userInputNumber);
+	}
+	else
+	{
+		/* If the number is even, say so */
+		printf("The number is even. \n");
+	}
+#endif
+
+#ifdef solution2
+	if (userInputNumber % 2) // If there is a remainder from num / 2 then it, by definition, is odd
+	{
+		/* If the number is odd, multiply the number by 2 and store the result in the original variable... */
+		userInputNumber *= 2; // This compound assignment operator is the same as userInputNumer = userInputNumer * 2;
+		/* ...and print the new number */
+		printf("The number was odd but I made it even. \nThe new number is %d. \n", userInputNumber);
+	}
+	else
+	{
+		/* If the number is even, say so */
+		printf("The number is even. \n");
+	}
+#endif
+
+#ifdef solution3
+	if (userInputNumber % 2) // If the remainder from num / 2 != 0 then it is, by definition, odd
+	{
+		/* If the number is odd, multiply the number by 2 and store the result in the original variable... */
+		/* ...and print the new number */
+		printf("The number was odd but I made it even. \nThe new number is %d. \n", userInputNumber <<= 1);
+		/* This compound assignment operator is the same as userInputNumer = userInputNumer * 2; */
+		/* The inline compound assignment will print the correct number but also execute the compound assignment */
+		/* Also, a bitwise shift left is the most efficient way of multiplying a number by 2 but most compilers will optimize a (I.2) operation anyway */
+	}
+	else
+	{
+		/* If the number is even, say so */
+		printf("The number is even. \n");
+	}
+#endif
+
+#ifdef bonus_solution
+	if (userInputNumber&1) // If the right most bit is set on any binary, the number is odd.  Hence, if you bitwise AND 1 with an odd number, the result is 1 (AKA TRUE)
+	{
+		/* If the number is odd, multiply the number by 2 and store the result in the original variable... */
+		/* ...and print the new number */
+		printf("The number was odd but I made it even. \nThe new number is %d. \n", userInputNumber <<= 1);
+		/* This compound assignment operator is the same as userInputNumer = userInputNumer * 2; */
+		/* The inline compound assignment will print the correct number but also execute the compound assignment */
+		/* Also, a bitwise shift left is the most efficient way of multiplying a number by 2 but most compilers will optimize a (I.2) operation anyway */
+
+	}
+	else
+	{
+		/* If the number is even, say so */
+		printf("The number is even. \n");
+	}
+#endif
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+//////////////////////////////////////////////
+// This program takes user input.
+// That user input is treated as a flag field
+//     indicating one or more forms of energy.
+// The user input is checked against constant
+//     variables using a bitwise AND.
+// The results are printed in a human-readable
+//     format.
+// Then the program prompts the user for a
+//     flag to turn off.
+// The results are printed in a human-readable
+//     format.
+//////////////////////////////////////////////
+
+int main(void)
+{
+	const uint8_t flagKinetic = 128;		// 10000000
+	const uint8_t flagPotential = 64;		// 01000000
+	const uint8_t flagThermal = 32;			// 00100000
+	const uint8_t flagChemical = 16;		// 00010000
+	const uint8_t flagElectrical = 8;		// 00001000
+	const uint8_t flagElectrochemical = 4;	// 00000100
+	const uint8_t flagSound = 2;			// 00000010
+	const uint8_t flagNuclear = 1;			// 00000001
+
+	uint8_t energyForms = 0;
+
+	printf("Enter a number 1-255 which reprents the energy forms \nany particular object possesses. \nEnter 0 to exit. \n");
+	_flushall();
+	scanf("%"SCNu8, &energyForms);
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+	
+	uint8_t changeSomeFlags = 0x0;
+	printf("Enter a hex number that represents the flag you want to turn on.\n(e.g., 0xD4)\n");
+	_flushall();
+	scanf("%x"SCNu8, &changeSomeFlags);
+//	printf("You entered %x which is really %u \n", setSomeFlags, setSomeFlags); // DEBUGGING
+	energyForms = energyForms | changeSomeFlags; // Bitwise OR turning on "setSomeFlags" bits in "energyFlags"
+
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+
+	printf("Enter a hex number that represents the flag you want to turn off.\n(e.g., 0xD4)\n");
+	_flushall();
+	scanf("%x"SCNu8, &changeSomeFlags);
+	//	printf("You entered %x which is really %u \n", setSomeFlags, setSomeFlags); // DEBUGGING
+	energyForms &= ~changeSomeFlags; // Bitwise OR turning on "setSomeFlags" bits in "energyFlags"
+
+	printf("\n\n");
+	printf("%x\tYour object:             %"PRIu8"\n", energyForms, energyForms);
+	printf("%x\tKinetic Energy:          %d \n", flagKinetic, (energyForms & flagKinetic) > 0);
+	printf("%x\tPotential Energy:        %d \n", flagPotential, (energyForms & flagPotential) > 0);
+	printf("%x\tThermal Energy:          %d \n", flagThermal, (energyForms & flagThermal) > 0);
+	printf("%x\tChemical Energy:         %d \n", flagChemical, (energyForms & flagChemical) > 0);
+	printf("%x\tElectrical Energy:       %d \n", flagElectrical, (energyForms & flagElectrical) > 0);
+	printf("%x\tElectrochemical Energy:  %d \n", flagElectrochemical, (energyForms & flagElectrochemical) > 0);
+	printf("%x\tSound Energy:            %d \n", flagSound, (energyForms & flagSound) > 0);
+	printf("%x\tNuclear Energy:          %d \n\n\n", flagNuclear, (energyForms & flagNuclear) > 0);
+
+	return 0;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	char letter = 1;
+	int i = 0;
+	char paragraph[] = { "\tOne fish.\n\tTwo fish.\n\tRed fish.\n\tBlue fish." };
+	puts(paragraph); // DEBUGGING
+	printf("\n\n\n"); // Print some blank lines
+
+	while (letter != 10 && letter != 0)
+	{
+		letter = paragraph[i];
+		printf("%c", letter);
+		i++;
+	}
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int userInput = 1;
+	int numRows = 0;
+
+	while (1)
+	{
+		printf("What number would you like to see a times table for?  ");
+		scanf("%d", &userInput);
+
+		if (userInput <= 0)
+		{
+			continue;
+		}
+		else if (userInput > 10)
+		{
+			break;
+		}
+		else
+		{
+			printf("********************\n");
+			printf("** %2d TIMES TABLE **\n", userInput);
+			printf("********************\n");
+			for (numRows = 0; numRows <= userInput; numRows++)
+			{
+				printf("%d x %d = %d \n", userInput, numRows, userInput * numRows);
+			}
+		}
+	} 
+
+
+
+
+
+
+	return 0;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// DEMONSTRATION LAB I.2.A-9 /////////////////////////////
+/////////////////////////////////// NESTED CONTROL FLOW /////////////////////////////////
+///////////////////////////////// "Modular Multiplication ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+// Input an integer
+// Print a multiplication chart for the integer up to its square
+// Repeat the "multiplication chart" process
+// Immediately exit if the user enters 10 or more
+// Use continue to ignore zeros and negative numbers
+/////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int userInput = 0;
+	int row = 0;
+	int column = 0;
+	int i = 0;
+
+	while (1)
+	{
+		printf("\nHow large would you like your multiplication table to be?  ");
+		_flushall();
+		scanf("%d", &userInput);
+
+		if (userInput <= 0)
+		{
+			continue;
+		}
+		else if (userInput > 9)
+		{
+			break;
+		}
+		else
+		{
+			
+			column = userInput;
+
+			/* PRINT THE FIRST ROW */
+			printf("X");
+			for (i = 1; i <= userInput; i++)
+			{
+				printf("\t%d", i);
+			}
+			printf("\n");
+			/* PRINTS FANCY CHART DIVIDER */
+			for (i = 0; i <= ((userInput * 8) + 1); i++)
+			{
+				printf("-");
+			}
+			printf("\n");
+
+			/* PRINT ROWS 2 THROUGH X */
+			for (row = 1; row <= userInput; row++)
+			{
+				printf("%d |", row);  // Prints the first column
+				for (column = 1; column <= userInput; column++)
+				{
+					printf("\t%d", row * column); // Fills the chart
+				}
+				printf("\n");
+			}
+		}
+	}
+
+	return 0;
+}
+////////////////////////////////////////////////////////////////////////
+/////////////////// PERFORMANCE LAB I.2.A-1 ////////////////////////////
+////////////////////////////////////////////////////////////////////////
+// Initialize a char array to zero
+// Safely store a user-input string in that char array
+// Safely print the string *if* the following is true
+//     The first element is greater than or equal to decimal value 32
+//     The first element is less than decimal value 126
+// NOTE:  The decimal values 32 - 126 represent printable characters
+////////////////////////////////////////////////////////////////////////
+
+#define BUFF_SIZE 8
+#include <stdio.h>
+#define solution1 // There are two solutions to this Lab
+
+int main(void)
+{
+	char userInputString[BUFF_SIZE] = { 0 };
+	printf("Input a string: \n");
+	_flushall();
+	fgets(userInputString, BUFF_SIZE, stdin);
+	
+#ifdef solution1
+	if (userInputString[0] >= 32 && userInputString[0] < 126)
+	{
+		fputs(userInputString, stdout);
+	}
+#endif
+
+#ifdef solution2
+	/* While this is a perfectly functional solution, it doesn't necessarily pass the "readability" test. */
+	if (*userInputString >= 32 && *userInputString < 126)
+	{
+		fputs(userInputString, stdout);
+	}
+#endif
+
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// PERFORMANCE LAB I.2.A-2 /////////////////////////////
+///////////////////////////////// Negative, Ghost Rider //////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+// Initialize a signed int to 0
+// Input a number from the user and store it in the signed int
+// Determine if the number is even or odd utilizing a bitwise operator
+// Utilizing an IF-ELSE statement:
+//     If the number is negative, say so
+//     Otherwise, print the original value in binary, and use a bitwise operation to
+//         flip one bit to make it negative
+// Print the binary
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//#include <stddef.h>
+#include "C:\Users\hark\Documents\Visual Studio 2013\Projects\PrintBinary\PrintBinary\PrintBinary.h"
+//#define solution1 // Available choices:  solution1, solution2, solution3, and bonus_solution
+
+int main(void)
+{
+	signed int inputUserNumber = 0;
+	signed int binaryMask = 1 << ((sizeof(inputUserNumber) * 8) - 1); // Initializes binaryMask by turning on the left-most bit
+
+	printf("Please input an integer:  ");
+	_flushall();
+	scanf("%d", &inputUserNumber);
+
+	if (inputUserNumber & binaryMask)
+	{
+		printf("You input a negative number. \n");
+	}
+	else
+	{
+		/* Print the original value in binary */
+		printf("\nThe binary of the original value is: \n");
+		printBinary(&inputUserNumber, sizeof(inputUserNumber));
+		/* Flip the bit to make it negative */
+		inputUserNumber = inputUserNumber | binaryMask;
+		/* */
+		printf("\nThe binary of the new value, %d, is: \n", inputUserNumber);
+//		printBinary(&inputUserNumber, sizeof(inputUserNumber)); // Duplicate invokation of printBinary()
+	}
+
+	printBinary(&inputUserNumber, sizeof(inputUserNumber));
+
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// PERFORMANCE LAB I.2.A-3 //////////////////////////////////
+/////////////////////////////// Swap the Largest Number //////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// Initialize thre (and only three) unsigned int variables to 0
+// Safely scan user input into the variable #1 and #2 utilizing a single line
+// Using a single ELSE-IF statement:
+//     If variable #1 is equal to variable #2, print an error
+//     Otherwise, exchange the value of the largest variable with variable #3 while
+//         preserving the other value
+// Print the values of all three variables if the sum of the three variables is greater
+//     than 2 regardless of the previous ELSE-IF statement
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	/* Initialize three (and only three) unsigned int variables to 0 */
+	unsigned int variable1 = 0;
+	unsigned int variable2 = 0;
+	unsigned int variable3 = 0;
+
+	/* Safely scan user input into the variable #1 and #2 utilizing a single line */
+	printf("Enter two different positive integers separated by a single space. \n");
+	printf("(e.g., 17 1932 \n");
+	_flushall();
+	scanf("%u %u", &variable1, &variable2);
+
+	/* If variable #1 is equal to variable #2, print an error */
+	if (variable1 == variable2) // Executes this block if the two input variables are equal
+	{
+		printf("\n\n\n*******\n*ERROR*\n*******\n\n\n");
+	}
+	else if (variable1 > variable2) // Executes this block if variable1 is the largest
+	{
+		variable1 = variable1 ^ variable3;
+		variable3 = variable1 ^ variable3;
+		variable1 = variable1 ^ variable3;
+	}
+	else							// Executes this block if variable 2 is the largest
+	{
+		variable2 = variable2 ^ variable3;
+		variable3 = variable2 ^ variable3;
+		variable2 = variable2 ^ variable3;
+	}
+
+	/* Print the values of all three variables if the sum is greater than 2 */
+	if ((variable1 + variable2 + variable3) > 2)
+	{
+		printf("Variable 1:  %u \nVariable 2:  %u\nVariable 3:  %u\n", variable1, variable2, variable3);
+	}
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int number1 = 0;
+	char operator = 0;
+	int number2 = 0;
+	
+	printf("Enter a simple math formula which includes two integer operands and a single operator. \n");
+	printf("(e.g., 1 + 1, -8 - 3, 2 * 7, -15 / -4) \n");
+	_flushall();
+	scanf("%d %c %d", &number1, &operator, &number2);
+	printf("\n\n\n");
+
+	switch (operator)
+	{
+		case '+':
+			printf("%d %c %d = %d \n", number1, operator, number2, number1 + number2);
+			break;
+		case '-':
+			printf("%d %c %d = %d \n", number1, operator, number2, number1 - number2);
+			break;
+		case '*':
+			printf("%d %c %d = %d \n", number1, operator, number2, number1 * number2);
+			break;
+		case '/':
+			if (number2)
+			{
+				printf("%d %c %d = %.2f \n", number1, operator, number2, (double)number1 / (double)number2);
+			}
+			break;
+		default:
+			printf("You entered unsupported input. \n");
+			break;
+	}
+
+	return 0;
+}
+#include <stdio.h>
+#include "C:\Users\hark\Documents\Visual Studio 2013\Projects\x2a Control Flow\x2a Control Flow\blackjack.h"
+
+int main(void)
+{
+	int blackjackTotal = give_me_a_card();
+	int newCard = give_me_a_card();
+	if (newCard == 11 && (newCard + blackjackTotal) > 21)
+	{
+		blackjackTotal += 1;
+	}
+	else
+	{
+		blackjackTotal += newCard;
+	}
+
+	printf("Your hand is at:  %d \n", blackjackTotal);
+
+	while (blackjackTotal < 17)
+	{
+		printf("You hit.  ");
+		newCard = give_me_a_card();
+		if (newCard == 11 && (newCard + blackjackTotal) > 21)
+		{
+			blackjackTotal += 1;
+		}
+		else
+		{
+			blackjackTotal += newCard;
+		}
+		printf("Your new total is:  %d. \n", blackjackTotal);
+	}
+	if (blackjackTotal > 21)
+	{
+		printf("\n*************\n* YOU BUST! *\n*************\n");
+	}
+
+	return 0;
+}
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+	int alphabetCounter[26] = { 0 };
+	char inputChar = 0;
+	int i = 0;
+
+	printf("Type a sentence and press Enter. \n");
+	do
+	{
+		inputChar = getchar();
+		inputChar = toupper(inputChar);
+		if (inputChar >= 65 && inputChar <= 90)
+		{
+			alphabetCounter[inputChar - (char)'A']++;
+		}
+	} 
+	while (inputChar != '\n');
+
+	for (i = 0; i < (sizeof(alphabetCounter) / sizeof(alphabetCounter[0])); i++)
+	{
+		printf("%c:  %d \n", (char)(i + 'A'), alphabetCounter[i]);
+	}
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	unsigned int calcNumerator = 1;
+	unsigned int userDemoninator = 0;
+	int foundNumerators = 20;
+
+	do
+	{
+		printf("\nEnter a positive integer:  ");
+		_flushall();
+		scanf("%d", &userDemoninator);
+
+		if (userDemoninator > 999)
+		{
+			break;
+		}
+		else if (userDemoninator == 0)
+		{
+			continue;
+		}
+		else
+		{
+			printf("The first 20 positive integers divisible by %d are: \n", userDemoninator);
+			calcNumerator = 1;
+			foundNumerators = 20;
+			while (foundNumerators)
+			{
+				if (!(calcNumerator % userDemoninator))
+				{
+					printf("%d \n", calcNumerator);
+					foundNumerators--;
+				}
+				calcNumerator++;
+			}
+		}
+	} 
+	while (userDemoninator <= 999);
+	
+	return 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// DEMONSTRATION LAB I.3.A-1 /////////////////////////////
+///////////////////////////////////// "Newline Records" //////////////////////////////////
+//////////////////////////////////// Instructor Solution /////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// Do not modify main()
+// Write the code body for the following function prototype:
+//     int remove_newline(char * buffer);
+// This function takes a pointer to a null-terminated string as a parameter
+// This function must replace all newline characters with spaces
+// The return value should represent the number of newline characters that were changed
+//     with the following exceptions:
+//         Return ERR_NULL_POINTER if the pointer to the string (buffer) is NULL
+//         Return ERR_NONE_FOUND if no newlines are found
+// Do not process a NULL string pointer (buffer)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+#include <stdio.h>
+#include <string.h>
+#define ERR_NULL_POINTER -1		// Error:  Pointer passed was NULL
+#define ERR_NONE_FOUND 0		// Error:  Didn't find any newlines
+
+
+int remove_newline(char * buffer);
+
+int main(void)
+{
+	/* FUNCTION INPUT ARRAYS */
+	char beforeString1[] = { "If debugging is the process of removing software bugs, then programming must be the process of putting them in.  -Edsger Dijkstra" }; // No newlines
+	char beforeString2[] = { "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.\n-Martin Golding" }; // One newline
+	char beforeString3[] = { "Debugging is twice as hard as writing the code in the first place.\nTherefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.\n-Brian W. Kernighan" }; // Two newlines
+	char beforeString4[] = { "C makes it easy to shoot yourself in the foot;\nC++ makes it harder, but when you do,\nit blows away your whole leg.\n-Bjarne Stroustrup\n" }; // Four newlines
+	char beforeString5[] = { "Talk\nis\ncheap.\nShow\nme\nthe\ncode.\n-Linus\nTorvalds\n" }; // Multiple newlines
+	char * beforeString6 = NULL; // NULL Pointer
+	char * beforeStringArray[] = { beforeString1, beforeString2, beforeString3, beforeString4, beforeString5, beforeString6 };
+
+	/* FUNCTION OUTPUT COMPARISON */
+	char afterString1[] = { "If debugging is the process of removing software bugs, then programming must be the process of putting them in.  -Edsger Dijkstra" }; // No newlines
+	char afterString2[] = { "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. -Martin Golding" }; // One newline
+	char afterString3[] = { "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it. -Brian W. Kernighan" }; // Two newlines
+	char afterString4[] = { "C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg. -Bjarne Stroustrup " }; // Four newlines
+	char afterString5[] = { "Talk is cheap. Show me the code. -Linus Torvalds " }; // Multiple newlines
+	char * afterString6 = NULL;
+	char * afterStringArray[] = { afterString1, afterString2, afterString3, afterString4, afterString5, afterString6 };
+
+	/* STRCMP FUNCTION EXPECTED RESULTS */
+	int expectedFunctionResults[] = { ERR_NONE_FOUND, 1, 2, 4, 9, ERR_NULL_POINTER }; // Parallel array which holds expected return values of remove_newline() for given input
+
+	int i = 0; // Iterating variable
+	int tempResults = 0; // Temporarily holds function results until comparison can be done
+
+	/* TEST RUNS */
+	for (i = 0; i < sizeof(beforeStringArray) / sizeof(*beforeStringArray); i++)
+	{
+		/* Test Run Header */
+		printf("\nTEST #%d \n", i + 1);
+		printf("__________________________________________________\n");
+
+		/* Simultaneously modifies the strings and temporarily stores the return value */
+		tempResults = remove_newline(beforeStringArray[i]);
+
+		/* Verifies the return value of remove_newline() */
+		printf("\tReturn Results:  ");
+		if (expectedFunctionResults[i] == tempResults)
+		{
+			printf("\tPASS\n");
+		}
+		else
+		{
+			printf("\tFAIL\n");
+		}
+
+		/* Verifies remove_newline() performed adequately */
+		printf("\tComparison Results:  ", tempResults);
+		if (beforeStringArray[i]) // strcmp() doesn't like NULL pointers
+		{
+			/* Temporarily stores the retun value of strcmp() */
+			tempResults = strcmp(beforeStringArray[i], afterStringArray[i]);
+			if (!tempResults) // strcmp() returns 0 if the two strings match
+			{
+				printf("\tPASS\n"); // 0
+			}
+			else
+			{
+				printf("\tFAIL\n"); // 1
+			}
+		}
+		else
+		{
+			printf("\tNo string present.\n"); // strcmp() doesn't like NULL pointers.  No comparison necessary.
+		}
+	}
+
+	return 0;
+}
+
+/*
+ * FUNCTION:   int remove_newline(char * buffer)
+ *
+ * ARGUMENTS:  buffer is a pointer to a null-terminated string
+ *             The string is passed by reference and modified in place
+ *
+ * RETURNS:	   Number of newline characters that were replaced
+ *             ERR_NULL_POINTER if buffer == NULL
+ *             ERR_NONE_FOUND if no newlines are found
+ *
+ * NOTES:      This function replaces all newlines with spaces
+ */
+int remove_newline(char * buffer)
+{
+	int count = 0; // Number of newlines removed
+	if (buffer)
+	{
+		/* LOCAL VARIABLE DECLARATION */
+		size_t bufferLength = 0;
+		int i = 0;
+
+		/* FUNCTION ALGORITHM */
+		bufferLength = strlen(buffer);			// Calculate length of input buffer
+		for (i = 0; i < bufferLength; i++)		// Iterates through entire buffer
+		{
+			if (*buffer == '\n')				// Checks for newline characters
+			{
+				count++;						// Increment the number of newlines removed
+				*buffer = ' ';					// Changes character to a space
+			}
+			buffer++;							// Increments to the next element in the string
+		}
+	}
+	else
+	{
+		return ERR_NULL_POINTER;				// Because buffer is a NULL pointer
+	}
+
+	/* DYNAMIC RETURN VALUES */
+	if (count)
+	{
+		return count;
+	}
+	else
+	{
+		return ERR_NONE_FOUND;					// Because the function found no newline characters
+	}
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// DEMONSTRATION LAB I.3.A-2 ///////////////////////////////
+/////////////////////////////////////// Variable Scope ////////////////////////////////////
+///////////////////////////////// "I'm thinking of a number..." ///////////////////////////
+////////////////////////////////////// Instructor Solution ////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+// The objective of this lab is to take user input (a "magic number") and to write a
+//     function that will "randomize" numbers until it "guesses" the "magic number".
+//     The function should not choose "randomized" numbers as "guesses" if those "guesses"
+//     have already been used.  A macro named MAX_GUESS is used to establish the range
+//     of "magic numbers" (1 to MAX_GUESS).  Main() and the function will not directly
+//     communicate the "guesses".  Instead, they'll use the global uint8_t array to 
+//     determine if the function has guessed the "magic number".  The function will update
+//     the global array with "guesses" and main() will watch the global array to determine
+//     if the "magic number" has been guessed.
+//
+// main() should:
+//     1. Take input
+//     2. Verify that input falls between 1 and MAX_GUESS (inclusive)
+//     3. Watch the global array to see if the "magic number" has been guessed
+//     4. Loop the function until the "magic number" has been guessed in the array
+//     5. Print the total number of randomizations the function performed once the "magic
+//         number is guessed
+//
+// guess_a_number() should:
+//     1. Randomize a number between 1 and MAX_SIZE
+//     2. Increment the variable storing the total number of randomizations
+//     3. Check the global array to see if that number has already been "guessed"
+//         3.a. If it's been guessed already, go back to Step #1
+//         3.b. If it hasn't been guessed, modify the global array to indicate
+//             it's been guessed.
+//     4. Return the number of times the function has "randomized" a number
+//         NOTE:  "Randomizing" a number is different than "guessing" a number because
+//             some "randomized" numbers have already been "guessed"
+///////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <windows.h>
+#include <stdint.h>
+/* The following MACRO determines the available range of "magic numbers" and, subsequently, the "guesses" */
+#define MAX_GUESS 100 // Available numbers range from 1 to MAX_GUESS
+
+uint8_t previous_guesses[MAX_GUESS + 1] = { 0 };
+
+uint8_t guess_a_number(void); // Function prototype
+
+int main(void)
+{
+	uint8_t magicNumber = 0; // User input.  Represents the number to be guessed.
+	uint8_t computerRandomizations = 0; // Local variable to store return value from guess_a_number()
+
+	/* PICK A NUMBER */
+	do
+	{
+		printf("Pick a number between 1 and %d.\n", MAX_GUESS);
+		_flushall();
+		scanf("%d", &magicNumber);
+		if (magicNumber > MAX_GUESS || magicNumber < 1)
+		{
+			printf("That number was not between 1 and %d.\nTry again.\n", MAX_GUESS);
+		}
+	} 
+	while (magicNumber > MAX_GUESS || magicNumber < 1); // Continues looping until user complies with appropriate input
+
+//	printf("You chose %d\n", magicNumber); // DEBUGGING
+
+	/* GUESS A NUMBER */
+	/* main() will continue to loop guess_a_number() until guess_a_number() updates the "magic number" in previous_guesses[] */
+	while (!previous_guesses[magicNumber]) // While the "magic number" is set to 0 in previous_guesses[]...
+	{
+		computerRandomizations = guess_a_number(); // Run guess_a_number() and store the return value
+	}
+	/* While loop ends when guess_a_number() updates the previous_guesses[] element corresponding to the "magic number" */
+	printf("The computer randomized %d numbers to guess your number.\n", computerRandomizations);
+
+	return 0;
+}
+
+/*
+* FUNCTION:   uint8_t guess_a_number(void)
+*
+* ARGUMENTS:  This function takes no parameters although it *should* update the previous_guesses global array
+*
+* RETURNS:	  Total number of "randomizations" 
+*             NOTE:  One "randomization" is one function call to rand() while one "guess" is one update to
+*                 previous_guesses[]
+*
+* NOTES:      This function randomizes numbers from 1 to MAX_SIZE.
+*             Each randomized number is checked against the previous_guesses global array.
+*             If the value had already been guessed, the function will randomize another number
+*             If the value had not already been guessed, this function will update the global array
+*/
+uint8_t guess_a_number(void)
+{
+	static uint64_t randomizations = 0;
+	uint8_t randomNumber = 0;
+//	Sleep(1000);
+//	sleep();
+	if (!randomizations)
+	{
+		srand((unsigned)time(NULL));
+	}
+
+	do
+	{
+//		randomNumber = (rand() % MAX_GUESS) + 1; // Original statement
+		randomNumber = rand(); // DEBUGGING
+		randomNumber = (randomNumber % MAX_GUESS) + 1; // DEBUGGING
+		printf("The function randomized: %d \n", randomNumber); // DEBUGGING
+		randomizations++;
+	}
+	while (previous_guesses[randomNumber]);
+	previous_guesses[randomNumber] = 1;
+	
+
+	return randomizations;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// DEMONSTRATION LAB I.3.A-2 ///////////////////////////////
+/////////////////////////////////////// Variable Scope ////////////////////////////////////
+///////////////////////////////// "I'm thinking of a number..." ///////////////////////////
+////////////////////////////////////// Instructor Solution ////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+// The objective of this lab is to take user input (a "magic number") and to write a
+//     function that will "randomize" numbers until it "guesses" the "magic number".
+//     The function should not choose "randomized" numbers as "guesses" if those "guesses"
+//     have already been used.  A macro named MAX_GUESS is used to establish the range
+//     of "magic numbers" (1 to MAX_GUESS).  Main() and the function will not directly
+//     communicate the "guesses".  Instead, they'll use the global uint8_t array to 
+//     determine if the function has guessed the "magic number".  The function will update
+//     the global array with "guesses" and main() will watch the global array to determine
+//     if the "magic number" has been guessed.
+//
+// main() should:
+//     1. Take input
+//     2. Verify that input falls between 1 and MAX_GUESS (inclusive)
+//     3. Watch the global array to see if the "magic number" has been guessed
+//     4. Loop the function until the "magic number" has been guessed in the array
+//     5. Print the total number of randomizations the function performed once the "magic
+//         number is guessed
+//
+// guess_a_number() should:
+//     1. Randomize a number between 1 and MAX_SIZE
+//     2. Increment the variable storing the total number of randomizations
+//     3. Check the global array to see if that number has already been "guessed"
+//         3.a. If it's been guessed already, go back to Step #1
+//         3.b. If it hasn't been guessed, modify the global array to indicate
+//             it's been guessed.
+//     4. Return the number of times the function has "randomized" a number
+//         NOTE:  "Randomizing" a number is different than "guessing" a number because
+//             some "randomized" numbers have already been "guessed"
+///////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <windows.h>
+#include <stdint.h>
+/* The following MACRO determines the available range of "magic numbers" and, subsequently, the "guesses" */
+#define MAX_GUESS 100 // Available numbers range from 1 to MAX_GUESS
+
+uint8_t previous_guesses[MAX_GUESS + 1] = { 0 };
+
+uint8_t guess_a_number(void); // Function prototype
+
+int main(void)
+{
+	uint8_t magicNumber = 0; // User input.  Represents the number to be guessed.
+	uint8_t computerRandomizations = 0; // Local variable to store return value from guess_a_number()
+
+	/* PICK A NUMBER */
+	do
+	{
+		printf("Pick a number between 1 and %d.\n", MAX_GUESS);
+		_flushall();
+		scanf("%d", &magicNumber);
+		if (magicNumber > MAX_GUESS || magicNumber < 1)
+		{
+			printf("That number was not between 1 and %d.\nTry again.\n", MAX_GUESS);
+		}
+	} 
+	while (magicNumber > MAX_GUESS || magicNumber < 1); // Continues looping until user complies with appropriate input
+
+//	printf("You chose %d\n", magicNumber); // DEBUGGING
+
+	/* GUESS A NUMBER */
+	/* main() will continue to loop guess_a_number() until guess_a_number() updates the "magic number" in previous_guesses[] */
+	while (!previous_guesses[magicNumber]) // While the "magic number" is set to 0 in previous_guesses[]...
+	{
+		computerRandomizations = guess_a_number(); // Run guess_a_number() and store the return value
+	}
+	/* While loop ends when guess_a_number() updates the previous_guesses[] element corresponding to the "magic number" */
+	printf("The computer randomized %d numbers to guess your number.\n", computerRandomizations);
+
+	return 0;
+}
+
+/*
+* FUNCTION:   uint8_t guess_a_number(void)
+*
+* ARGUMENTS:  This function takes no parameters although it *should* update the previous_guesses global array
+*
+* RETURNS:	  Total number of "randomizations" 
+*             NOTE:  One "randomization" is one function call to rand() while one "guess" is one update to
+*                 previous_guesses[]
+*
+* NOTES:      This function randomizes numbers from 1 to MAX_SIZE.
+*             Each randomized number is checked against the previous_guesses global array.
+*             If the value had already been guessed, the function will randomize another number
+*             If the value had not already been guessed, this function will update the global array
+*/
+uint8_t guess_a_number(void)
+{
+	static uint64_t randomizations = 0;
+	uint8_t randomNumber = 0;
+//	Sleep(1000);
+//	sleep();
+	/* This */
+	if (!randomizations)
+	{
+		srand((unsigned)time(NULL));
+	}
+
+	do
+	{
+//		randomNumber = (rand() % MAX_GUESS) + 1; // Original statement
+		randomNumber = rand(); // DEBUGGING
+		randomNumber = (randomNumber % MAX_GUESS) + 1; // DEBUGGING
+		printf("The function randomized: %d \n", randomNumber); // DEBUGGING
+		randomizations++;
+	}
+	while (previous_guesses[randomNumber]);
+	previous_guesses[randomNumber] = 1;
+	
+
+	return randomizations;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// DEMONSTRATION LAB I.3.A-3 ///////////////////////////////
+//////////////////////////////////////// Header Files /////////////////////////////////////
+////////////////////////////////////// "String Theory" ////////////////////////////////////
+////////////////////////////////////// Instructor Solution ////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+// The objective of this lab is to declare and define a header "MyStringHeader.h"
+// MyStringHeader should include a function of prototype:
+// int print_the_count(char * inputString, int strLen);
+// The requirements for the prototype are included below in the function documentation box
+// The students definition of the prototype will be tested by instructor-written
+//     test code (see: Unit Test Code 1.c)
+// When students are done declaring and defining the header, they are to add
+//     "Unit Test Code 1.c" to their project and debug.
+// Unit Test Code 1.c utilizes macros to run some, all, or none of the available
+//     unit tests.  Comment out the Unit Test Code 1.c macros to manage which tests
+//     are run. 
+///////////////////////////////////////////////////////////////////////////////////////////
+
+#ifndef ERR_NULL_POINTER
+#define ERR_NULL_POINTER -1
+#else 
+#undef ERR_NULL_POINTER
+#define ERR_NULL_POINTER -1
+#endif
+
+#ifndef ERR_INVALID_LENGTH
+#define ERR_INVALID_LENGTH -2
+#else 
+#undef ERR_INVALID_LENGTH
+#define ERR_INVALID_LENGTH -2
+#endif
+
+/*
+ * FUNCTION:   int print_the_count(char * inputString, int strLen)
+ *
+ * ARGUMENTS:  inputString is a pointer to a character array (see: string) and is *NOT* 
+ *                 guaranteed to be NULL terminated.  This is why the length of the 
+ *                 string is also passed as an argument.
+ *             strLen is the length of the inputString.  strLen is required as a safety
+ *                 measure since inputString is not guaranteed to be null-terminated.
+ *                 strLen does not need to be long enough to include any null character,
+ *                 even if there was one.
+ *
+ * RETURNS:    # of alphabet letters found in inputString
+ *             ERR_NULL_POINTER is inputString is NULL
+ *             ERR_INVALID_LENGTH is strLen is unreasonable (zero or less)
+ *
+ * NOTES:      Not only does this function return the total number of alphabet letters
+ *                 that were counted, it should also print a table of letters from the
+ *                 string with their count.  Do not print any letters that were not
+ *                 found in inputString.
+ *             The "case" of the letter (upper or lower) should not matter for the count.
+ *                 There are different ways to ignore the case of a char.  It is up
+ *                 to the student to determine the method.
+ */
+int print_the_count(char * inputString, int strLen)
+{
+	int theCount = 0; // Running count of upper case letters
+	int i = 0; // Incrementing variable
+	char oneCharacter = 0; // Temp storage to change each string character to an upper case character one by one
+	/*
+	 *  An array to store the by-letter-count of upper case letters
+	 *  Each element represents the count of an upper case letter
+	 *  Index 0 represents the letter A
+	 *  IndeI.25 represents the letter Z
+	 */
+	int countTheLetters[26] = { 0 }; 
+
+	if (!inputString) // Checks for NULL pointer
+	{
+		return ERR_NULL_POINTER;
+	}
+	else if (strLen <= 0) // Checks for unrealistic input
+	{
+		return ERR_INVALID_LENGTH;
+	}
+	else
+	{
+		/* 
+		 *  COUNT THE STRING'S ALPHABET LETTERS
+		 */ 
+		for (i = 0; i < strLen; i++)
+		{
+			oneCharacter = toupper(inputString[i]); // Changes the string to upper case characters
+			if (oneCharacter >= 65 && oneCharacter <= 90) // If the character matches A-Z...
+			{
+				countTheLetters[oneCharacter - 65]++;	// ...Add one to the count of this particular upper case letter...
+				theCount++;								// ...and increment the running count of upper case letters
+			}
+		}
+
+		/* 
+		 *  PRINT THE ALPHABET CHART 
+		 */
+		// Table title
+		printf("************\n");
+		printf("LETTER COUNT\n");
+		printf("************\n");
+		for (i = 65; i <= 90; i++) // Check the decimal value of each upper case letter
+		{
+			if (countTheLetters[i - 65] > 0) // If the value is greater than zero...
+			{
+				printf("%c\t%d\n", i, countTheLetters[i - 65]); // ...print a table entry for this letter
+			}
+		}
+	}
+
+	return theCount; // Return the running count of upper case letters
+}
+
+/*
+ *  NOTE:
+ *  This code was incomplete at the time it was transferred from the development laptop
+ *  to it's storage location on the NIPRNET.  Some code was added without the aid of an IDE.
+ *  The conditional preprocessor wrappers for the two error condition macro constants
+ *  (see: ERR_NULL_POINTER and ERR_INVALID_LENGTH) were added after the fact.  The docmentation
+ *  box was also missing.  The final edits were made in Noteapd.
+ */
+#include <stdio.h>
+#include <string.h>
+#include "MyStringHeader.h"
+
+int main(void)
+{
+	int i = 0;
+	int tempStrLen = 0;
+	int tempReturnValue = 0;
+	int totalUnitTestsRun = 0;
+	int numUnitTestsPassed = 0;
+	char testString1[] = { "This is a test string." }; // NULL terminated string
+	char testString2[15] = { 'N', 'o', 't', ' ', 't', 'e', 'r', 'm', 'i', 'n', 'a', 't', 'e', 'd', '!' }; // Not null-terminated
+	char testString3[] = { "!@#$%^&*()" }; // No alphabet letters in the string
+	char testString4 = NULL; // NULL pointer
+	char testString5[] = { "This is a normal string the but main() will pass zero as a string length." }; // Good string but passed with zero length
+	char testString6[] = { "This is a normal string but main() will pass an invalid string length." }; // Good string but passed with invalid length
+	char * testStringArray[] = {testString1, testString2, testString3, testString4, testString5, testString6};
+	int testStringLength[] = { strlen(testString1), 15, strlen(testString3), 999, 0, -999 };
+	int testStringReturnValues[] = {17, 13, 0, -1, -2, -2};
+	int testReturnValueStorage[6] = { 0 };
+
+	for (i = 0; i < (sizeof(testStringArray) / sizeof(testStringArray[0])); i++)
+	{
+		/* Unit test header */
+		printf("UNIT TEST #%d STRING:\n\t", i + 1);
+		/* Print the test string */
+		if (1 == i)
+		{
+			printf("Passing a non null-terminated string.\n");
+		}
+		else if (3 == i)
+		{
+			printf("Passing a NULL pointer.\n");
+		}
+		else
+		{
+			puts(testStringArray[i]);
+		}
+		/* Pass the unit test data to print_the_count() */
+		//tempReturnValue = print_the_count(testStringArray[i], testStringLength[i]);
+		testReturnValueStorage[i] = print_the_count(testStringArray[i], testStringLength[i]);
+		totalUnitTestsRun++;
+
+		if (testReturnValueStorage[i] == testStringReturnValues[i])
+		{
+			printf("\tPASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("\tFAIL\n");
+		}
+	}
+	printf("\n*******************************\n");
+	printf("This program ran %d unit tests.\n", totalUnitTestsRun);
+	printf("Your header passed %d unit tests.\n", numUnitTestsPassed);
+	printf("*******************************\n");
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(void)
+{
+	int i = 0;
+	int numberFibonacciNumbers = 0;
+	int fibNumMinus2 = 0;
+	int fibNumMinus1 = 1;
+	int currentFibNum = 0;
+
+	printf("How many Fibonacci numbers would you like to print? \n");
+	_flushall();
+	scanf("%d", &numberFibonacciNumbers);
+
+	printf("******************\n");
+	printf("FIBONACCI SEQUENCE\n");
+	printf("******************\n");
+	printf("%d\n%d\n", fibNumMinus2, fibNumMinus1);
+
+	for (i = 0; i < numberFibonacciNumbers; i++)
+	{
+		currentFibNum = fibNumMinus1 + fibNumMinus2;
+		printf("%d\n", currentFibNum);
+		fibNumMinus2 = fibNumMinus1;
+		fibNumMinus1 = currentFibNum;
+	}
+
+	return 0;
+}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int fibonacci_number(int sequenceNumber);
+
+int main(void)
+{
+	int i = 0;
+	int numberFibonacciNumbers = 0;
+	int currentFibNum = 0;
+
+	printf("How many Fibonacci numbers would you like to print? \n");
+	_flushall();
+	scanf("%d", &numberFibonacciNumbers);
+
+	printf("******************\n");
+	printf("FIBONACCI SEQUENCE\n");
+	printf("******************\n");
+	for (i = 0; i < numberFibonacciNumbers; i++)
+	{
+		currentFibNum = fibonacci_number(i);
+		printf("%d\n", currentFibNum);
+	}
+
+	return 0;
+}
+
+int fibonacci_number(int sequenceNumber)
+{
+	int returnValue;
+
+	if (sequenceNumber < 0)
+	{
+		returnValue = -1;
+	}
+	else if (0 == sequenceNumber)
+	{
+		returnValue = 0;
+	}
+	else if (1 == sequenceNumber)
+	{
+		returnValue = 1;
+	}
+	else
+	{
+		returnValue = fibonacci_number(sequenceNumber - 1) + fibonacci_number(sequenceNumber - 2);
+	}
+
+	return returnValue;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// PERFORMANCE LAB I.3.A-1 //////////////////////////////
+////////////////////////////////// "Healthy Substiutions" ////////////////////////////////
+//////////////////////////////////// Instructor Solution /////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// Do not modify main()
+// Write the code body for the following function prototype:
+//     int replace_character (char * string, const char findThisChar, const char replaceItWithThis);
+// This function takes the following parameters:
+//     A pointer to a null-terminated string as a parameter (string)
+//     A constant character to find in the afore mentioned string (findThisChar)
+//     A constant character to replace the afore mentioned 'search' character (replaceItWithThis)
+// This function must replace all occurences of "findThisChar" with "replaceItWithThis"
+// The return value should represent the number of characters that were changed
+//     with the following exceptions:
+//         Return ERR_NONE_FOUND if no newlines are found
+//         Return ERR_NULL_POINTER if the pointer to the string (string) is NULL
+//         Return ERR_FIND_EQUALS_REPLACE if "findThisChar" is equal to "replaceItWithThis"
+//         Return ERR_NON_PRINTABLE_CHARACTER if "findThisChar" or "replaceItWithThis"
+//             is a non-printable character
+// Do not process a NULL string pointer (string)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+
+/* 
+ * This pre-processing directive determines whether the program will
+ *     run unit tests and/or prompt the user for input depending on
+ *     what #define statements are uncommented.
+ * #define AUTO // Runs unit test
+ * #define MANUAL // Asks user for input
+ * Uncomment out both #defines to first execute unit testing and then take user input
+ */
+#define AUTO
+#define MANUAL
+
+#define NUMBER_OF_TESTS 12 // There are currently 12 unit tests.  More may be added by increasing this value and adding more cases.
+#define ERR_NONE_FOUND 0 // Return value if no occurences of "findThisChar" are found
+#define ERR_NULL_POINTER -1 // Return value if string is NULL
+#define ERR_FIND_EQUALS_REPLACE -2 // Return value if "findThisChar" is the same as "replaceItWithThis"
+#define ERR_NON_PRINTABLE_CHARACTER -3 // Return value if "findThisChar" or "replaceItWithThis" are non-printable characters
+
+
+int replace_character(char * string, const char findThisChar, const char replaceItWithThis);
+
+int main(void)
+{
+	/* VARIABLE INITIALIZATION */
+	int i = 0; // Iterating variable
+	char findChar = 0; // Local variable to store the search character
+	char replaceChar = 0; // Local variable to store the replacement character
+
+	/* The AUTO code block allows runs established unit tests to give students formal, standardized feedback on their code. */
+#ifdef AUTO
+	char testString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+	const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+	int tempResult = 999; // Temporarily holds the return value of replace_character to compare it to expected 'static' value per unit test
+	int numberOfErrors = 0; // Counts the total number of FAILed unit tests
+	printf("PERFORMING TESTING\n");
+
+	for (i = 1; i <= NUMBER_OF_TESTS; i++)
+	{
+		strncpy(testString, originalTestString, strlen(testString)); // Resets testString by copying original version into it
+		switch (i) // Cases represent the various unit tests.  Numbers equate to test arrays.
+		{
+			case (1):
+				printf("\nTest #1 - Make one lowercase letter replacement\n");
+				findChar = 'a';
+				replaceChar = 'b';
+				char test1[] = { "testSTRING-bbcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (1 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test1);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (2) :
+				printf("\nTest #2 - Make one uppercase letter replacement\n");
+				findChar = 'X';
+				replaceChar = 'Y';
+				char test2[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWYYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (1 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test2);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (3) :
+				printf("\nTest #3 - Make two lowercase letter replacements\n");
+				findChar = 's';
+				replaceChar = 'n';
+				char test3[] = { "tentSTRING-abcdefghijklmnopqrntuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (2 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test3);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (4) :
+				printf("\nTest #4 - Make two uppercase letter replacements\n");
+				findChar = 'T';
+				replaceChar = 'P';
+				char test4[] = { "testSPRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSPUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (2 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test4);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (5) :
+				printf("\nTest #5 - Make one non-alphabet replacement\n");
+				findChar = '[';
+				replaceChar = '{';
+				char test5[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-={]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (1 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test5);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (6) :
+				printf("\nTest #6 - Make two non-alphabet replacements\n");
+				findChar = '-';
+				replaceChar = '_';
+				char test6[] = { "testSTRING_abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890_=[]',./!@#$%^&*()_+{}:<>?\n" };
+				//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (2 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test6);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (7) :
+				printf("\nTest #7 - Testing a NULL pointer\n");
+				findChar = '-';
+				replaceChar = '_';
+				char * test7 = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(NULL, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (ERR_NULL_POINTER == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				//tempResult = strcmp(testString, test7); // test7 is NULL
+				printf("\tReplacement:\tNot executed.\n");
+/*				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+*/
+				break;
+
+			case (8) :
+				printf("\nTest #8 - Search character matches replace character\n");
+				findChar = '-';
+				replaceChar = '-';
+				char test8[] = { "testSTRING_abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890_=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (ERR_FIND_EQUALS_REPLACE == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test8);
+				printf("\tReplacement:\tNot tested.\n");
+/*				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+*/
+				break;
+
+			case (9) :
+				printf("\nTest #9 - Search character not found\n");
+				findChar = '\\';
+				replaceChar = 'n';
+				char test9[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (ERR_NONE_FOUND == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test9);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (10) :
+				printf("\nTest #10 - Search for a non-printable character\n");
+				findChar = 10;
+				replaceChar = 'n';
+				char test10[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (ERR_NON_PRINTABLE_CHARACTER == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test10);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (11) :
+				printf("\nTest #11 - Replace a non-printable character\n");
+				findChar = 't';
+				replaceChar = 11;
+				char test11[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (ERR_NON_PRINTABLE_CHARACTER == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test11);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			case (12) :
+				printf("\nTest #12 - Replace a non-printable character with\nanother non-printable character\n");
+				findChar = 10;
+				replaceChar = 12;
+				char test12[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+//				const char originalTestString[] = { "testSTRING-abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZI.3.567890-=[]',./!@#$%^&*()_+{}:<>?\n" };
+
+				/* TESTING */
+				/* Return Value Testing */
+				tempResult = replace_character(testString, findChar, replaceChar);
+				printf("\tReturn Value:\t");
+				if (ERR_NON_PRINTABLE_CHARACTER == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+
+				/* Algorithm Testing */
+				tempResult = strcmp(testString, test12);
+				printf("\tReplacement:\t");
+				if (0 == tempResult)
+				{
+					printf("PASS\n");
+				}
+				else
+				{
+					printf("FAIL\n");
+					numberOfErrors++;
+				}
+				break;
+
+			default:
+				printf("You tried to run %d tests but there aren't %d of tests yet. \n", i, NUMBER_OF_TESTS);
+				break;
+		}
+	}
+	if (1 == numberOfErrors)
+	{
+		printf("You had %d error", numberOfErrors);
+	}
+	else
+	{
+		printf("You had %d errors", numberOfErrors);
+	}
+	
+#endif
+
+	/* The MANUAL code block allows students to manually interact with their functions. */
+#ifdef MANUAL
+	char badString1[] = { "Off we go into the wild blue vonder..." }; // One error
+	char badString2[] = { "I speqqed something wrong in this sentence." }; // Two errors
+	char badString3[] = { "Zwo strings walk into a bar.\nZhe first string says, \"I'll have a beer.#MV*()>SDk+!^&@P&]JEA&#65535\"\nZhe second string says, \"Sorry.  He's not null-terminated.\"\n" }; // Three errors
+	char badString4[] = { "How much Food could a Foodchuck chuck if a woodchuck could chuck Food?" }; // Some errors
+	char badString5[] = { "What do you do if there's nothing wrong with a sentence?" }; // No errors
+	char * badString6 = NULL;
+	char * badStringArray[] = { badString1, badString2, badString3, badString4, badString5, badString6 };
+	int functionResult = 999;
+	size_t numberOfManualStrings = sizeof(badStringArray) / sizeof(*badStringArray); // Stores the number of strings in the badArray string array
+
+	for (i = 0; i < numberOfManualStrings; i++)
+	{
+		printf("\nString #%d (of %d):\n%s\n", i + 1, numberOfManualStrings, badStringArray[i]); // Preface each manual string
+		printf("What character do you want to replace?  "); // Prompt for findThisChar
+		_flushall();
+		findChar = getchar();
+		printf("What character do you want to replace it with?  "); // Prompt for replaceItWithThis
+		_flushall();
+		replaceChar = getchar();
+		functionResult = replace_character(badStringArray[i], findChar, replaceChar); // Runs replace_character() and stores the result
+		printf("String #%d is now:\n%s\n", i + 1, badStringArray[i]); // Prints the modified string
+		printf("Your function returned %d \n", functionResult); // Shows student the return value of replace_character()
+	}
+#endif
+
+	return 0;
+}
+
+/*
+* FUNCTION:   int replace_character(char * string, const char findThisChar, const char replaceItWithThis)
+*
+* ARGUMENTS:  string is a pointer to a null-terminated string.  The string is passed by reference and modified in place.
+*             findThisChar is the character to 'search' for
+*             replaceItWithThis is the character to 'replace' the 'search' character with
+*
+* RETURNS:	  Number of characters that were replaced
+*             ERR_NONE_FOUND if no occurrences of "findThisChar" are found
+*             ERR_NULL_POINTER if string == NULL
+*             ERR_FIND_EQUALS_REPLACE if "findThisChar" is equal to "replaceItWithThis"
+*             ERR_NON_PRINTABLE_CHARACTER if "findThisChar" or "replaceItWithThis" are non-printable characters
+*
+* NOTES:      This function replaces all occurrences of "findThisChar" with "replaceItWithThis" in "string"
+*/
+int replace_character(char * string, const char findThisChar, const char replaceItWithThis)
+{
+	int i = 0; // Incrementing variable
+	int count = 0; // Counts the number of replacements
+	size_t stringLength = 0; // Will store length of string
+
+	if (findThisChar > 126 || findThisChar < 32 || replaceItWithThis > 126 || replaceItWithThis < 32) // Non-printable characters
+	{
+		return ERR_NON_PRINTABLE_CHARACTER;
+	}	
+	else if (findThisChar == replaceItWithThis) // 'search' and 'replace' characters are equal
+	{
+		return ERR_FIND_EQUALS_REPLACE;
+	}
+	else if (string) // If string is not NULL...
+	{
+		stringLength = strlen(string);
+		for (i = 0; i < stringLength; i++) // For loop increments through char array
+		{
+			if (string[i] == findThisChar) // Checks each char array element against 'search' character.  If it matches...
+			{
+				string[i] = replaceItWithThis; // ...changes the element with the 'replace' character and...
+				count++; // ...increments the number of characters that have been changed by one.
+			}
+		}
+	}
+	else // Otherwise, the string is NULL...
+	{
+		return ERR_NULL_POINTER; // ...so we return ERR_NULL_POINTER
+	}
+
+	if (count) // If there was at least one replacement...
+	{
+		return count; // ...return the number of replacements.
+	}
+	else // Otherwise...
+	{
+		return ERR_NONE_FOUND; // ...the function didn't replace anything so return ERR_NONE_FOUND
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// PERFORMANCE LAB I.3.A-2 //////////////////////////////
+////////////////////////////////////// "Alphabet Soup" ///////////////////////////////////
+//////////////////////////////////// Instructor Solution /////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// WARNING:  Do not modify main()
+// PURPOSE:
+//     Take input (e.g., stdin) and count the alphabet letters from the input
+//     Stop taking input on Ctrl-D (char breakCharacter = 17;)
+//     Each function utilizes a global array (see: alphabetCount[])
+//     Each function's return values will provide integrity checks
+// REASON:
+//     main() should not change
+//     main() requires given execution and specific return values
+//     The only modification outside of main() should be the function definitions
+//         and commenting/uncommenting the various unit test macros
+//     Programmers often must code within previously established frameworks
+// TESTING:
+//     main() includes built-in testing
+//     The type of test(s) to be run are determined by the #define lines
+//     Each function has its own test
+//     The overall program has its own test
+//     There is also a manual input test to aid the student by providing interaction
+//     The Structured_Input.txt file must be in C:\Temp
+//     temp.txt is another file utilized in C:\Temp but main() will create the file
+//         if temp.txt isn't already there.  It is merely for temporary use.
+// GLOBAL ARRAY:
+//     Initialized outside main()
+//     Accessed directly by all of the program's functions
+//     Dimension fo 26 (one index per alphabet letter)
+//     Value in each index contains the current count of that letter
+//     0 represents A, 1 represents B, 2 represents C, etc.
+//     The count for "a" (and "A" since the count is case-insensitive) is stored in
+//         alphabetCount[0].  The rest of the letters follow the index numbers
+//         in alphabetic order.
+// NOTE:
+//     The overall structure of this program is complicated.  The student is not
+//         required to see the forest (the entire program) while programming a 
+//         tree (one function).  If the students follow the given criteria for
+//         each of the functions, all should be well.  The unit tests are built
+//         for iterative testing.  This means they can define a single function
+//         and then run tests on that function by itself (by commenting out all
+//         of the other tests, of course)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdint.h>
+
+
+/*
+ * This pre-processing directive determines whether the program will
+ *     run unit tests and/or prompt the user for input depending on
+ *     what #define statements are uncommented.
+ #define AUTO_COUNT_INPUT // Runs unit tests on int count_input(FILE * inputStream)
+ #define AUTO_CLEAR_ARRAY // Runs unit tests on clear_global_array(int currentAlphaCount)
+ #define AUTO_PRINT_COUNT // Runs unit tests on print_alphabet_count(int printTheCount)
+ #define AUTO_FULL_PROGRAM // Runs unit tests on the entire program as a whole, incorporating all functions
+ #define MANUAL // Allows the programmer to manually provide input to test the response of the program as a whole
+ * Uncomment out multiple #defines to multiple tests in a single run
+ */
+#define AUTO_COUNT_INPUT
+#define AUTO_CLEAR_ARRAY
+#define AUTO_PRINT_COUNT
+#define AUTO_FULL_PROGRAM
+//#define MANUAL
+
+#define ERR_NULL_POINTER -1 // Return value if string is NULL
+#define ERR_COUNT_MISMATCH -2 // Return value if the alphabet letter count doesn't equal the global array
+#define SMALL_TEST_FILE_LOCATION "C:\\Temp\\temp.txt" // Used for individual unit tests
+#define LARGE_TEST_FILE_LOCATION "C:\\Temp\\Structured_Input.txt" // Used for full unit test
+
+int alphabetCount[26] = { 0 }; // Global array that holds the current count of alphabet letters
+
+int count_input(FILE * inputStream); // Returns character input and updates alphabetCount[] with number of letters
+int print_alpabet_count(int printTheCount); // Returns sum of all values in alphabetCount[]; printTheCount is a boolean argument to print alphabetCount[] results to stdout
+int clear_global_array(int currentAlphaCount); // Returns a boolean result of currentAlphaCount compared to what was found in alphabetCount[]; Empties alphabetCount[]
+
+int main(void)
+{
+	long int totalChars = 0; // Holds the total number of characters, letters or otherwise, that have been counted
+	long int totalAlphaChars = 0; // Holds the total number of alphabet letters that have been counted
+	int i = 0; // Incrementing variable
+	int j = 0; // Incrementing variable
+	int numUnitTestsRun = 0; // Holds the number of unit tests that have been run
+	int numUnitTestsPassed = 0; // Holds the number of unit tests that have passed
+
+	/* 
+	 * This unit test will send sample input into your count_input() function
+	 * It passes this input by utilizing crafted char arrays (e.g, testString1, testString2)
+	 * Each char array is coupled with a similarly numbered parallel int array (e.g., testAlphabetCount1, testAlphabetCount2)
+	 *     which represents the expected status of the global alphabetCount[] array when the count is complete.
+	 * The expected return value for each char array is stored in a parallet int array (autoCountInputStringAnswers)
+	 * The char arrays are stored in a char * array (autoCountInputStringArray)
+	 * The parallel int arrays are stored in an int * array (testAlphabetCount)
+	 * The char arrays are printed to a FILE * (autoCountInputTestFile) to be passed as a parameter to count_input()
+	 * Not only is the return value for each function call verified, the post-function status of the global array
+	 *     is also verified against the parallel int array.
+	 */
+#ifdef AUTO_COUNT_INPUT
+#define TEST_BUFF_SIZE 512 // Standardized buffer size to aid in looping
+
+	/* Define Test 1 */
+	char testString1[TEST_BUFF_SIZE] = { "a B c D?" }; // Appropriately sized string properly marked
+	testString1[8] = 17;
+	testString1[9] = 0;
+	int testAlphabetCount1[26] = { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+	/* Define Test 2 */
+	char testString2[TEST_BUFF_SIZE] = { "1 @ 3 $ thumb War!" }; // Large string with empty space improperly marked
+	testString2[TEST_BUFF_SIZE - 2] = 17;
+	testString2[TEST_BUFF_SIZE - 1] = 0;
+	int testAlphabetCount2[26] = { 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0 };
+
+	/* Define Test 3*/
+	char testString3[TEST_BUFF_SIZE] = { "32 Non-printable characters" }; // String that contains non-printable characters, empty space, and is improperly marked
+
+	for (i = 31; i >= 0; i--)
+	{
+		if (17 == i)
+		{
+			continue; // Skip char 17 since we don't want to end prematurely
+		}
+		testString3[TEST_BUFF_SIZE - i - 3] = i;
+	}
+		
+	testString3[TEST_BUFF_SIZE - 2] = 17;
+	testString3[TEST_BUFF_SIZE - 1] = 0;
+	int testAlphabetCount3[26] = { 3, 1, 2, 0, 2, 0, 0, 1, 1, 0, 0, 1, 0, 3, 1, 1, 0, 3, 1, 2, 0, 0, 0, 0, 0, 0 };
+
+	/* Define Test 4 */
+	char testString4[TEST_BUFF_SIZE] = { "Properly marked non-printable characters: " }; // String that contains non-printable characters and no empty space
+
+	for (i = 43; i < (43 + 18); i++)
+	{
+		testString4[i] = i - 42;
+	}
+	int testAlphabetCount4[26] = { 4, 1, 2, 1, 4, 0, 0, 1, 1, 0, 1, 2, 1, 3, 2, 3, 0, 6, 1, 2, 0, 0, 0, 0, 1, 0 };
+
+	/* Define Parallel Arrays */
+	char * autoCountInputStringArray[] = { testString1, testString2, testString3, testString4 };
+	int autoCountInputStringAnswers[] = { 9, 511, 483, 60 };
+	int * testAlphabetCount[] = { testAlphabetCount1, testAlphabetCount2, testAlphabetCount3, testAlphabetCount4 };
+
+	FILE * autoCountInputTestFile = NULL; // File pointer
+	autoCountInputTestFile = fopen(SMALL_TEST_FILE_LOCATION, "w+");
+
+	if (autoCountInputTestFile) // Verify file pointer is not NULL
+	{
+		printf("\n***********************************\n");
+		printf("RUNNING UNIT TESTS ON count_input()\n");
+		printf("***********************************\n\n");
+		for (i = 0; i < sizeof(autoCountInputStringArray) / sizeof(autoCountInputStringArray[0]); i++)
+		{
+//			fputs(autoCountInputStringArray[i], autoCountInputTestFile); // Isn't copying all characters because it's stopping at NULL instead of continuing to Ctrl-Q
+			for (j = 0; j < TEST_BUFF_SIZE; j++)
+			{
+				fputc(autoCountInputStringArray[i][j], autoCountInputTestFile); // Places the current testString into the test file character by character
+			}
+
+			/* AUTO_COUNT_INPUT Unit Test Execution 1 - 4 */
+			printf("Test %d:\n\t", i + 1);
+			printf("Return Value\t");
+			numUnitTestsRun++;
+			if (autoCountInputStringAnswers[i] == count_input(autoCountInputTestFile))
+			{
+				printf("PASS\n");
+				numUnitTestsPassed++;
+			}
+			else
+			{
+				printf("FAIL\n");
+				printf("\tThe unit test was expecting %d \n", autoCountInputStringAnswers[i]);
+			}
+			printf("\tGlobal Array\t");
+			numUnitTestsRun++;
+			int failedCheck = 0; 
+			for (j = 0; j < 26; j++)
+			{
+				if (testAlphabetCount[i][j] != alphabetCount[j])
+				{
+					printf("FAIL\n");
+					failedCheck = 1;
+					break;
+				}
+			}
+			if (!failedCheck)
+			{
+				printf("PASS\n");
+				numUnitTestsPassed++;
+			}
+			memset(alphabetCount, 0, 26 * sizeof(int));
+			freopen(SMALL_TEST_FILE_LOCATION, "w+", autoCountInputTestFile); // Reopen the file, emptying it
+			if (!autoCountInputTestFile)
+			{
+				printf("Error reopening file.\n");
+				break;
+			}
+		}
+		/* AUTO_COUNT_INPUT Unit Test Execution 5 */
+		printf("Test 5:\n\tReturn Value\t"); // Manual unit test to verify response to NULL pointer input
+		numUnitTestsRun++;
+		if (ERR_NULL_POINTER == count_input(NULL))
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+			printf("\tFunction did not return the proper value for a NULL pointer.\n");
+		}
+		printf("\tGlobal Array\t");
+		numUnitTestsRun++;
+		int failedCheck = 0;
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				printf("FAIL\n");
+				failedCheck = 1;
+				break;
+			}
+		}
+		if (!failedCheck)
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		if(autoCountInputTestFile)
+		{
+			fclose(autoCountInputTestFile);
+		}
+	}
+
+#endif
+
+   /* 
+	* This unit test will call your clear_global_array() function to clear different values in the alphabetCount global array
+	* It sets non-zero values to the alphabetCount global array and calls the clear_global_array() function to clear it
+	* These tests are able to compare pre-determined results to the function's return value and performance
+	* For each test, it tests the function's return value first
+	* Then it verifies that all of alphabetCount[]'s elements have been set to zero (0)
+	* A properly functioning clear_global_array() is a pre-requisite to passing all of the print_alphabet_count()
+	*     unit tests since print_alphabet_count() is required to call clear_global_array().
+	*/
+#ifdef AUTO_CLEAR_ARRAY
+
+	printf("\n******************************************\n");
+	printf("RUNNING UNIT TESTS ON clear_global_array()\n");
+	printf("******************************************\n\n");
+
+	for (i = 1; i <= 5; i++)
+	{
+		printf("Test %d: \n\t", i);
+
+		for (j = 0; j < 26; j++)
+		{
+			alphabetCount[j] = i;
+		}
+
+		printf("Return Value\t");
+		numUnitTestsRun++;
+
+		if (clear_global_array(i * 26))
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+
+		printf("\tReset Array\t");
+		numUnitTestsRun++;
+
+		int failedCheck = 0; // Boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+	}
+
+#endif
+
+   /*
+	* This unit test will make adjustments to the alphabetCount[] global array and test print_alphabet_count()'s
+	*     ability to invoke clear_global_array() to zeroize the values stored within alphabetCount[]
+	* It sets non-zero values to the alphabetCount global array and verifies print_alphabet_count()'s ability
+	*     to return the sum of all the values.
+	* Then it verifies that all of alphabetCount[]'s elements have been set to zero (0)
+	* A properly functioning clear_global_array() is a pre-requisite to passing all of the print_alphabet_count()
+	*     unit tests since print_alphabet_count() is required to call clear_global_array().
+	* These unit tests are very similar to the clear_global_array() unit tests.
+	*/
+#ifdef AUTO_PRINT_COUNT
+
+	printf("\n********************************************\n");
+	printf("RUNNING UNIT TESTS ON print_alphabet_count()\n");
+	printf("********************************************\n\n");
+
+	for (i = 1; i <= 5; i++)
+	{
+		printf("Test %d: \n\t", i);
+
+		for (j = 0; j < 26; j++)
+		{
+			alphabetCount[j] = i;
+		}
+		
+		printf("Return Value\t");
+		numUnitTestsRun++;
+
+		if (print_alpabet_count(0) == (i * 26))
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+
+		printf("\tReset Array\t");
+		numUnitTestsRun++;
+
+		int failedCheck = 0; // Boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+	}
+	memset(alphabetCount, 0, 26 * sizeof(int));
+	printf("Test 6: Empty array\n\tReturn Value\t");
+	numUnitTestsRun++;
+	if (0 == print_alpabet_count(0))
+	{
+		printf("PASS\n");
+		numUnitTestsPassed++;
+	}
+	else
+	{
+		printf("FAIL\n");
+	}
+
+
+#endif
+
+
+	/* This unit test will test the entire program at once. It accomplishes by using a pre-written file
+	 *     that will need to be staged in LARGE_TEST_FILE_LOCATION as #defined at the beginning.
+	 * This unit test should be able to detect and resolve any changes that have been made to the existing
+	 *     file.  This should alleviate any concerns as to the integrity of the unit test since it is
+	 *     using an external file to pass test data to this program.
+	 */
+#ifdef AUTO_FULL_PROGRAM
+	
+#define BUFF_SIZE 512
+	FILE * preStagedInput = NULL; // File pointer
+	preStagedInput = fopen(LARGE_TEST_FILE_LOCATION, "r"); // Open the file that contains the test input for read-only
+	if (preStagedInput) // Verify the file opened
+	{
+		printf("\n************************************\n");
+		printf("RUNNING UNIT TESTS ON THE ENTIRE LAB\n");
+		printf("************************************\n\n");
+		printf("CHECKING FILE INTEGRITY\n\t"); 
+		char copyBuffer[BUFF_SIZE] = { 0 }; // Holds the information that will be read from the test input file
+		/* Holds original copy of what the test input file should look like */
+		char verificationBuffer[BUFF_SIZE] = { "This file was created to aid a unit test for Performance Lab I.3.a-2, Variable Scope \"Alphabet Soup\".\n\nThe print function should give this output:\n\nYou've input a total of 364 characters.\nA: 18\nB: 4\nC: 7\nD: 4\nE: 17\nF: 7\nG: 2\nH: 7\nI: 12\nJ: 1\nK: 1\nL: 9\nM: 2\nN: 8\nO: 15\nP: 9\nQ: 1\nR: 10\nS: 10\nT: 23\nU: 11\nV: 5\nW: 2\nX: 2\nY: 3\nZ: 1\nYou've input a total of 191 letters.\n" };
+		verificationBuffer[363] = 17; // Manually set the 'escape character' (Ctrl-Q) since I can't type it
+		char tempChar = 0;
+
+		/* Copy the contents of the file into copyBuffer[] */
+		i = 0; // Incrementing variable is zeroized because it is used elsewhere
+		while (tempChar != 17) // Stop copying when you reach decimal value 17 (Ctrl-Q)
+		{
+			tempChar = getc(preStagedInput); // Read one character from the test input file
+			copyBuffer[i] = tempChar; // Put that character into the copyBuffer
+			i++; // Advance to the next element
+			if ((BUFF_SIZE - 1) == i) // Reached the end of the copy buffer
+			{
+				copyBuffer[i] = 0; // Manually ensure string is null terminated... for safety
+				break; // Will cause the while loop to end
+			}
+		}
+		copyBuffer[BUFF_SIZE - 1] = 0; // Manually null terminate the string... for safety
+		verificationBuffer[BUFF_SIZE - 1] = 0; // Manually null terminate the string... for safety
+
+		if (!(strcmp(copyBuffer, verificationBuffer))) // strcmp() will compare two strings
+		{
+			printf("The file has not been changed.\n");
+		}
+		else // ...test input file and original copy are not identical!
+		{
+			printf("We have a problem!\n\tThe file appears to have been changed.\n\tFixing file...\n");
+			rewind(preStagedInput); // Rewinds the file pointer to the beginning of the file
+			freopen(LARGE_TEST_FILE_LOCATION, "w", preStagedInput); // Closes and reopens the file in write mode
+			if (preStagedInput) // Verifies the reopen functioned on the file pointer
+			{
+				for (i = 0; i < BUFF_SIZE; i++) // Iterates through original copy
+				{
+					if (0 == verificationBuffer[i]) // Stops writing to the file when it encounters a null character from the original copy
+					{
+						break;
+					}
+					putc(verificationBuffer[i], preStagedInput); // Places the original version of the file into the test input file character by character
+				}
+				rewind(preStagedInput); // Rewinds the file pointer
+				freopen(LARGE_TEST_FILE_LOCATION, "r", preStagedInput); // Reopens the test input file in read-only mode... again
+			}
+			
+			if (preStagedInput) // Verifies the read-only reopen was successful
+			{
+				printf("\tThe file contents have been replaced.\n");
+			}
+			else // ...otherwise something went wrong
+			{
+				printf("\tReopening the file to fix the contents did not work.\n");
+				return -1;
+			}
+		}
+
+		/* Full Test #1 */
+		printf("TEST 1\tCounting total characters:  \n\t");
+		totalChars = count_input(preStagedInput);
+		printf("Return Value\t");
+		numUnitTestsRun++;
+		if (364 == totalChars)
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+		printf("\tGlobal Array\t");
+		numUnitTestsRun++;
+		int testAlphabetCountFull[26] = { 18, 4, 7, 4, 17, 7, 2, 7, 13, 1, 1, 9, 2, 8, 15, 9, 1, 10, 10, 23, 11, 5, 2, 1, 3, 1 };
+		int failedCheck = 0; // Boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j] != testAlphabetCountFull[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+
+		/* Full Test #2 */
+		totalAlphaChars = print_alpabet_count(0);
+		printf("TEST 2\tCounting alphabet letters:  \n\t");
+		printf("Return Value\t");
+		numUnitTestsRun++;
+		if (191 == totalAlphaChars)
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+
+		printf("\tGlobal Array\t");
+		numUnitTestsRun++;
+		failedCheck = 0; // Reseting boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+	}
+	else
+	{
+		printf("\n\nThere has been an error opening the test input file\n");
+	}
+
+	if (preStagedInput)
+	{
+		fclose(preStagedInput);
+	}
+#endif
+
+
+#ifdef MANUAL
+	printf("This program will count the number of characters and letters you input.\nWhen you are done with your input, input Ctrl-Q and press Enter.\n\n");
+	totalChars = count_input(stdin);
+	_flushall();
+	printf("You've input a total of %d characters.\n", totalChars);
+	totalAlphaChars = print_alpabet_count(1);
+	printf("You've input a total of %d letters.\n", totalAlphaChars);
+#endif
+
+	if (numUnitTestsRun)
+	{
+		printf("\n\nYou've run %d unit tests and passed %d of them. \n", numUnitTestsRun, numUnitTestsPassed);
+	}
+	return 0;
+}
+
+/*
+ * FUNCTION:   int count_input(FILE * inputStream)
+ *
+ * ARGUMENTS:  inputStream is a file pointer.  The stream is passed by reference.
+ *             By taking a stream as a parameter, this function can process input from stdin (manual input) or
+ *                 file pointers (automatic input) for the purpose of unit testing.
+ *
+ * RETURNS:	  The number of characters, alphabet letters or not, that were input.
+ *             For example:
+ *                 Input:  abc^Q			Return:  4			Explanation:  ^Q (AKA Ctrl-Q, 17) counts as character input
+ *                 Input:  90IOS^Q		Return:  6			Explanation:  ^Q (AKA Ctrl-Q, 17) counts as character input
+ *                 Input:  something\n
+ *                         ^Q			Return:  11			Explanation:  Pressing enter before ^Q (AKA Ctrl-Q, 17) registers as \n input and should be counted
+ *                 Input:  ^Q			Return:  1			Explanation:  Even without input, ^Q (AKA Ctrl-Q, 17) counts as character input
+ *             Return ERR_NULL_POINTER if inputStream is NULL
+ *
+ * NOTES:      Not only does this function return the total number of characters that were read from the stream "inputStream",
+ *                 this function should also update the character count in the global char array alphabetCount[].
+ *             First, uppercase 'A' is technically a different value than a lowercase 'a'.  To avoid this issue, change
+ *                 the case of all input to uppercase or lowercase (your discretion).  
+ *                     Option #1 - The C library contains functions that will change the case of input.  Research and utilize this library function if you wish.
+ *                     Option #2 - Changing the case of a letter is a relatively easy algorithm when you consider the decimal value for char values.
+ *                         Feel free to write your own algorithm and/or function to change the case of your input if you wish.
+ *                     NOTE:  Regardless of the option you choose, there are only 26 elements in the global array so you'll have to count capitals
+ *                         and lowercase input in the same index.
+ *             Second, each element in alphabetCount[] counts the number of occurences for a letter of the alphabet.  Element 0 represents A and 
+ *                 element 25 represents Z.  This means the value at element 0 represents the total number of As that have been counted.  
+ *                 The value at element 7, as another example, represents the number of Hs that have been read.  Another example is that the value of 
+ *                 alphabetCount[10] represents the number of letter Ks that have been counted.  Increment the approrpiate alphabetCount element based on 
+ *                 the alphabet letter that has been counted.
+ *             Third, stop taking input upon receiving decimal value 17 (AKA Ctrl-Q).  Decimal value 17 may be replicated by manually inputting Ctrl-Q as input.
+ *                 The character input of 17 (AKA Ctrl-Q) should count towards the overall character input and should not be ignored.
+ *             Fourth, ensure you check if inputStream is NULL.  If inputStream is NULL, return ERR_NULL_POINTER.
+ *             Fifth, stop looping through stream input if you input an EOF.  EOF stands for End of File.  EOF is #defined to represent the end of a file.
+ */
+int count_input(FILE * inputStream)
+{
+	if (inputStream) // If inputStream is not NULL...
+	{
+		rewind(inputStream); // Moves the file pointer to the beginning of the file.  This is necessary for reading one file multiple times.
+		long int characterCount = 0; // Total number of characters that have been read
+		char inputCharacter = 0; // Temp variable to hold characters read from inputStream
+
+		while (inputCharacter != 17) // Stop taking input if the last character read was a Ctrl-Q
+		{
+			inputCharacter = getc(inputStream); // Get one character from the FILE pointer
+			if (inputCharacter == EOF) // Stop looping on EOF
+			{
+				break;
+			}
+			else if (inputCharacter < 0)
+			{
+				printf("Someting went wrong.\nThere was a character in inputStream that wasn't an appropriate value.\n"); // Sometimes EOF is something other than -1
+				break;
+			}
+			inputCharacter = toupper(inputCharacter); // Change the last character read to uppercase
+			characterCount++; // Increment the character counter
+
+			if (inputCharacter >= 'A' && inputCharacter <= 'Z') // If the last read character was an uppercase letter...
+			{
+				/* ...increment the appropriate element in alphabetCount[].  Since element 0 represents A (decimal value 65), 
+				 * a value shift of 65 will result in the appropriate element to increment. 
+				 */
+				alphabetCount[inputCharacter - 65]++; 
+			}
+		}
+
+		/* Return the total number of characters that have been read. This value should include:
+		 *     Alphabet letters
+		 *     Non-alphabet characters
+		 *     Non-printable characters
+		 *     The Ctrl-Q that ends the 'reading' loop		 
+		 */
+		return characterCount; 
+	}
+	else
+	{
+		return ERR_NULL_POINTER; // ...Otherwise, return ERR_NULL_POINTER because inputStream is NULL
+	}
+}
+
+/*
+ * FUNCTION:   int print_alpabet_count(int printTheCount)
+ *
+ * ARGUMENTS:  printTheCount is utilized as a binary flag.  If printTheCount is on (AKA non-zero), then print_alphabet_count()
+ *                 should print the character count to stdout.  If printTheCount == 0, then print_alphabet_count() shouldn't
+ *                 actually print anything to stdout.  The return value should be unchanged by the value passed into printTheCount.
+ *
+ * RETURNS:	  The sum of all values contained in all elements of alphabetCount[]
+ *                 This sum should represent the total number of alphabet letters [a-z, A-Z] that were stored in alphabetCount[]
+ *
+ * NOTES:      First, this function sums and returns the total number of alphabet letters that were counted in alphabetCount[]
+ *             Second, this function should also print the per-letter count to stdout if printTheCount is a non-zero value.
+ *             Third, this function should invoke clear_global_array() once the total number of alphabet letters have been summed
+ *                 and the per-letter count has been printed (if required by printTheCount).  clear_global_array() is defined
+ *                 later but should zeroize the global array.  If clear_global_array() returns ERR_COUNT_MISMATCH, print an error.
+ */
+int print_alpabet_count(int printTheCount)
+{
+	char i = 0;
+	int runningTotal = 0;
+	for (i = 65; i < 91; i++)
+	{
+		if (printTheCount)
+		{
+			printf("%c: %d \n", i, alphabetCount[i - 65]);
+		}
+		runningTotal += alphabetCount[i - 65];
+	}
+	if (!(clear_global_array(runningTotal)))
+	{
+		printf("***********************************************************\n");
+		printf("There was an error clearing the zeroizing the global array.\n");
+		printf("***********************************************************\n");
+	}
+
+	return runningTotal;
+}
+
+/*
+ * FUNCTION:   int clear_global_array(int currentAlphaCount)
+ *
+ * ARGUMENTS:  currentAlphaCount represents the expected sum of the alphabetCount[] global array.  This function
+ *                 should perform it's own count of alphabetCount[] as it clears the array to verify no illegal
+ *                 modifications have taken place.
+ *
+ * RETURNS:	  The sum of all values contained in all elements of alphabetCount[]
+ *                 This sum should represent the total number of alphabet letters [a-z, A-Z] that were stored in alphabetCount[]
+ *
+ * NOTES:      First, this function sums and returns the total number of alphabet letters that were counted in alphabetCount[]
+ *             Second, this function should also print the per-letter count to stdout if printTheCount is a non-zero value.
+ *             Third, this function should invoke clear_global_array() once the total number of alphabet letters have been summed
+ *                 and the per-letter count has been printed (if required by printTheCount).  clear_global_array() is defined
+ *                 later but should zeroize the global array.  If clear_global_array() returns ERR_COUNT_MISMATCH, print an error.
+ */
+int clear_global_array(int currentAlphaCount)
+{
+	int count = 0; // Stores the sum of all the elements in alphabetCount[]
+	int i = 0; // Incrementing variable
+	
+	for (i = 0; i < (sizeof(alphabetCount) / sizeof(alphabetCount[0])); i++) // Dynamically determines dimension of alphabetCount
+	{
+		count += alphabetCount[i]; // Increments "count" by the value contained in alphabetCount[i]
+		alphabetCount[i] = 0; // Zeroizes alphabetCount[i]
+	}
+
+	/* Verifies that current "count" matches the value that was passed to clear_global_array() */
+	if (currentAlphaCount == count) 
+	{
+		return 1; // Success
+	}
+	else
+	{
+		return ERR_COUNT_MISMATCH; // This return value represents there was a mismatch
+	}	
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// PERFORMANCE LAB I.3.A-2 //////////////////////////////
+////////////////////////////////////// "Alphabet Soup" ///////////////////////////////////
+///////////////////////////////////// Student Stub Code //////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+// WARNING:  Do not modify main()
+// PURPOSE:
+//     Take input (e.g., stdin) and count the alphabet letters from the input
+//     Stop taking input on Ctrl-D (char breakCharacter = 17;)
+//     Each function utilizes a global array (see: alphabetCount[])
+//     Each function's return values will provide integrity checks
+// REASON:
+//     main() should not change
+//     main() requires given execution and specific return values
+//     The only modification outside of main() should be the function definitions
+//         and commenting/uncommenting the various unit test macros
+//     Programmers often must code within previously established frameworks
+// TESTING:
+//     main() includes built-in testing
+//     The type of test(s) to be run are determined by the #define lines
+//     Each function has its own test
+//     The overall program has its own test
+//     There is also a manual input test to aid the student by providing interaction
+//     The Structured_Input.txt file must be in C:\Temp
+//     temp.txt is another file utilized in C:\Temp but main() will create the file
+//         if temp.txt isn't already there.  It is merely for temporary use.
+// GLOBAL ARRAY:
+//     Initialized outside main()
+//     Accessed directly by all of the program's functions
+//     Dimension fo 26 (one index per alphabet letter)
+//     Value in each index contains the current count of that letter
+//     0 represents A, 1 represents B, 2 represents C, etc.
+//     The count for "a" (and "A" since the count is case-insensitive) is stored in
+//         alphabetCount[0].  The rest of the letters follow the index numbers
+//         in alphabetic order.
+// NOTE:
+//     The overall structure of this program is complicated.  The student is not
+//         required to see the forest (the entire program) while programming a 
+//         tree (one function).  If the students follow the given criteria for
+//         each of the functions, all should be well.  The unit tests are built
+//         for iterative testing.  This means they can define a single function
+//         and then run tests on that function by itself (by commenting out all
+//         of the other tests, of course)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdint.h>
+
+
+/*
+* This pre-processing directive determines whether the program will
+*     run unit tests and/or prompt the user for input depending on
+*     what #define statements are uncommented.
+#define AUTO_COUNT_INPUT // Runs unit tests on int count_input(FILE * inputStream)
+#define AUTO_CLEAR_ARRAY // Runs unit tests on clear_global_array(int currentAlphaCount)
+#define AUTO_PRINT_COUNT // Runs unit tests on print_alphabet_count(int printTheCount)
+#define AUTO_FULL_PROGRAM // Runs unit tests on the entire program as a whole, incorporating all functions
+#define MANUAL // Allows the programmer to manually provide input to test the response of the program as a whole
+* Uncomment out multiple #defines to multiple tests in a single run
+*/
+#define AUTO_COUNT_INPUT
+#define AUTO_CLEAR_ARRAY
+#define AUTO_PRINT_COUNT
+#define AUTO_FULL_PROGRAM
+#define MANUAL
+
+#define ERR_NULL_POINTER -1 // Return value if string is NULL
+#define ERR_COUNT_MISMATCH -2 // Return value if the alphabet letter count doesn't equal the global array
+#define SMALL_TEST_FILE_LOCATION "C:\\Temp\\temp.txt" // Used for individual unit tests
+#define LARGE_TEST_FILE_LOCATION "C:\\Temp\\Structured_Input.txt" // Used for full unit test
+#define TEST_BUFF_SIZE 512 // Standardized buffer size to aid in looping
+
+int alphabetCount[26] = { 0 }; // Global array that holds the current count of alphabet letters
+
+int count_input(FILE * inputStream); // Returns character input and updates alphabetCount[] with number of letters
+int clear_global_array(int currentAlphaCount); // Returns a boolean result of currentAlphaCount compared to what was found in alphabetCount[]; Empties alphabetCount[]
+int print_alpabet_count(int printTheCount); // Returns sum of all values in alphabetCount[]; printTheCount is a boolean argument to print alphabetCount[] results to stdout
+
+
+int main(void)
+{
+	long int totalChars = 0; // Holds the total number of characters, letters or otherwise, that have been counted
+	long int totalAlphaChars = 0; // Holds the total number of alphabet letters that have been counted
+	int i = 0; // Incrementing variable
+	int j = 0; // Incrememnting variable
+	int numUnitTestsRun = 0; // Holds the number of unit tests that have been run
+	int numUnitTestsPassed = 0; // Holds the number of unit tests that have passed
+
+	/*
+	* This unit test will send sample input into your count_input() function
+	* It passes this input by utilizing crafted char arrays (e.g, testString1, testString2)
+	* Each char array is coupled with a similarly numbered parallel int array (e.g., testAlphabetCount1, testAlphabetCount2)
+	*     which represents the expected status of the global alphabetCount[] array when the count is complete.
+	* The expected return value for each char array is stored in a parallet int array (autoCountInputStringAnswers)
+	* The char arrays are stored in a char * array (autoCountInputStringArray)
+	* The parallel int arrays are stored in an int * array (testAlphabetCount)
+	* The char arrays are printed to a FILE * (autoCountInputTestFile) to be passed as a parameter to count_input()
+	* Not only is the return value for each function call verified, the post-function status of the global array
+	*     is also verified against the parallel int array.
+	*/
+#ifdef AUTO_COUNT_INPUT
+	/* Define Test 1 */
+	char testString1[TEST_BUFF_SIZE] = { "a B c D?" }; // Appropriately sized string properly marked
+	testString1[8] = 17;
+	testString1[9] = 0;
+	int testAlphabetCount1[26] = { 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+	/* Define Test 2 */
+	char testString2[TEST_BUFF_SIZE] = { "1 @ 3 $ thumb War!" }; // Large string with empty space improperly marked
+	testString2[TEST_BUFF_SIZE - 2] = 17;
+	testString2[TEST_BUFF_SIZE - 1] = 0;
+	int testAlphabetCount2[26] = { 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0 };
+
+	/* Define Test 3*/
+	char testString3[TEST_BUFF_SIZE] = { "32 Non-printable characters" }; // String that contains non-printable characters, empty space, and is improperly marked
+
+	for (i = 31; i >= 0; i--)
+	{
+		if (17 == i)
+		{
+			continue; // Skip char 17 since we don't want to end prematurely
+		}
+		testString3[TEST_BUFF_SIZE - i - 3] = i;
+	}
+
+	testString3[TEST_BUFF_SIZE - 2] = 17;
+	testString3[TEST_BUFF_SIZE - 1] = 0;
+	int testAlphabetCount3[26] = { 3, 1, 2, 0, 2, 0, 0, 1, 1, 0, 0, 1, 0, 3, 1, 1, 0, 3, 1, 2, 0, 0, 0, 0, 0, 0 };
+
+	/* Define Test 4 */
+	char testString4[TEST_BUFF_SIZE] = { "Properly marked non-printable characters: " }; // String that contains non-printable characters and no empty space
+
+	for (i = 43; i < (43 + 18); i++)
+	{
+		testString4[i] = i - 42;
+	}
+	int testAlphabetCount4[26] = { 4, 1, 2, 1, 4, 0, 0, 1, 1, 0, 1, 2, 1, 3, 2, 3, 0, 6, 1, 2, 0, 0, 0, 0, 1, 0 };
+
+	/* Define Parallel Arrays */
+	char * autoCountInputStringArray[] = { testString1, testString2, testString3, testString4 };
+	int autoCountInputStringAnswers[] = { 9, 511, 483, 60 };
+	int * testAlphabetCount[] = { testAlphabetCount1, testAlphabetCount2, testAlphabetCount3, testAlphabetCount4 };
+
+	FILE * autoCountInputTestFile = NULL; // File pointer
+	autoCountInputTestFile = fopen(SMALL_TEST_FILE_LOCATION, "w+");
+
+	if (autoCountInputTestFile) // Verify file pointer is not NULL
+	{
+		printf("\n***********************************\n");
+		printf("RUNNING UNIT TESTS ON count_input()\n");
+		printf("***********************************\n\n");
+		for (i = 0; i < sizeof(autoCountInputStringArray) / sizeof(autoCountInputStringArray[0]); i++)
+		{
+			//			fputs(autoCountInputStringArray[i], autoCountInputTestFile); // Isn't copying all characters because it's stopping at NULL instead of continuing to Ctrl-Q
+			for (j = 0; j < TEST_BUFF_SIZE; j++)
+			{
+				fputc(autoCountInputStringArray[i][j], autoCountInputTestFile); // Places the current testString into the test file character by character
+			}
+
+			/* AUTO_COUNT_INPUT Unit Test Execution 1 - 4 */
+			printf("Test %d:\n\t", i + 1);
+			printf("Return Value\t");
+			numUnitTestsRun++;
+			if (autoCountInputStringAnswers[i] == count_input(autoCountInputTestFile))
+			{
+				printf("PASS\n");
+				numUnitTestsPassed++;
+			}
+			else
+			{
+				printf("FAIL\n");
+				printf("\tThe unit test was expecting %d \n", autoCountInputStringAnswers[i]);
+			}
+			printf("\tGlobal Array\t");
+			numUnitTestsRun++;
+			int failedCheck = 0;
+			for (j = 0; j < 26; j++)
+			{
+				if (testAlphabetCount[i][j] != alphabetCount[j])
+				{
+					printf("FAIL\n");
+					failedCheck = 1;
+					break;
+				}
+			}
+			if (!failedCheck)
+			{
+				printf("PASS\n");
+				numUnitTestsPassed++;
+			}
+			memset(alphabetCount, 0, 26 * sizeof(int));
+			freopen(SMALL_TEST_FILE_LOCATION, "w+", autoCountInputTestFile); // Reopen the file, emptying it
+			if (!autoCountInputTestFile)
+			{
+				printf("Error reopening file.\n");
+				break;
+			}
+		}
+		/* AUTO_COUNT_INPUT Unit Test Execution 5 */
+		printf("Test 5:\n\tReturn Value\t"); // Manual unit test to verify response to NULL pointer input
+		numUnitTestsRun++;
+		if (ERR_NULL_POINTER == count_input(NULL))
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+			printf("\tFunction did not return the proper value for a NULL pointer.\n");
+		}
+		printf("\tGlobal Array\t");
+		numUnitTestsRun++;
+		int failedCheck = 0;
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				printf("FAIL\n");
+				failedCheck = 1;
+				break;
+			}
+		}
+		if (!failedCheck)
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		if (autoCountInputTestFile)
+		{
+			fclose(autoCountInputTestFile);
+		}
+	}
+
+#endif
+
+	/*
+	* This unit test will call your clear_global_array() function to clear different values in the alphabetCount global array
+	* It sets non-zero values to the alphabetCount global array and calls the clear_global_array() function to clear it
+	* These tests are able to compare pre-determined results to the function's return value and performance
+	* For each test, it tests the function's return value first
+	* Then it verifies that all of alphabetCount[]'s elements have been set to zero (0)
+	* A properly functioning clear_global_array() is a pre-requisite to passing all of the print_alphabet_count()
+	*     unit tests since print_alphabet_count() is required to call clear_global_array().
+	*/
+#ifdef AUTO_CLEAR_ARRAY
+
+	printf("\n******************************************\n");
+	printf("RUNNING UNIT TESTS ON clear_global_array()\n");
+	printf("******************************************\n\n");
+
+	for (i = 1; i <= 5; i++)
+	{
+		printf("Test %d: \n\t", i);
+
+		for (j = 0; j < 26; j++)
+		{
+			alphabetCount[j] = i;
+		}
+
+		printf("Return Value\t");
+		numUnitTestsRun++;
+
+		if (clear_global_array(i * 26))
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+
+		printf("\tReset Array\t");
+		numUnitTestsRun++;
+
+		int failedCheck = 0; // Boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+	}
+
+#endif
+
+	/*
+	* This unit test will make adjustments to the alphabetCount[] global array and test print_alphabet_count()'s
+	*     ability to invoke clear_global_array() to zeroize the values stored within alphabetCount[]
+	* It sets non-zero values to the alphabetCount global array and verifies print_alphabet_count()'s ability
+	*     to return the sum of all the values.
+	* Then it verifies that all of alphabetCount[]'s elements have been set to zero (0)
+	* A properly functioning clear_global_array() is a pre-requisite to passing all of the print_alphabet_count()
+	*     unit tests since print_alphabet_count() is required to call clear_global_array().
+	* These unit tests are very similar to the clear_global_array() unit tests.
+	*/
+#ifdef AUTO_PRINT_COUNT
+
+	printf("\n********************************************\n");
+	printf("RUNNING UNIT TESTS ON print_alphabet_count()\n");
+	printf("********************************************\n\n");
+
+	for (i = 1; i <= 5; i++)
+	{
+		printf("Test %d: \n\t", i);
+
+		for (j = 0; j < 26; j++)
+		{
+			alphabetCount[j] = i;
+		}
+
+		printf("Return Value\t");
+		numUnitTestsRun++;
+
+		if (print_alpabet_count(0) == (i * 26))
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+
+		printf("\tReset Array\t");
+		numUnitTestsRun++;
+
+		int failedCheck = 0; // Boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+	}
+	memset(alphabetCount, 0, 26 * sizeof(int));
+	printf("Test 6: Empty array\n\tReturn Value\t");
+	numUnitTestsRun++;
+	if (0 == print_alpabet_count(0))
+	{
+		printf("PASS\n");
+		numUnitTestsPassed++;
+	}
+	else
+	{
+		printf("FAIL\n");
+	}
+
+
+#endif
+
+
+	/* This unit test will test the entire program at once. It accomplishes by using a pre-written
+	*     that will need to be staged in LARGE_TEST_FILE_LOCATION as #defined at the beginning.
+	* This unit test should be able to detect and resolve any changes that have been made to the existing
+	*     file.  This should alleviate any concerns as to the integrity of the unit test since it is
+	*     using an external file to pass test data to this program.
+	*/
+#ifdef AUTO_FULL_PROGRAM
+
+#define BUFF_SIZE 512
+	FILE * preStagedInput = NULL; // File pointer
+	preStagedInput = fopen(LARGE_TEST_FILE_LOCATION, "r"); // Open the file that contains the test input for read-only
+	if (preStagedInput) // Verify the file opened
+	{
+		printf("\n************************************\n");
+		printf("RUNNING UNIT TESTS ON THE ENTIRE LAB\n");
+		printf("************************************\n\n");
+		printf("CHECKING FILE INTEGRITY\n\t");
+		char copyBuffer[BUFF_SIZE] = { 0 }; // Holds the information that will be read from the test input file
+		/* Holds original copy of what the test input file should look like */
+		char verificationBuffer[BUFF_SIZE] = { "This file was created to aid a unit test for Performance Lab I.3.a-2, Variable Scope \"Alphabet Soup\".\n\nThe print function should give this output:\n\nYou've input a total of 364 characters.\nA: 18\nB: 4\nC: 7\nD: 4\nE: 17\nF: 7\nG: 2\nH: 7\nI: 12\nJ: 1\nK: 1\nL: 9\nM: 2\nN: 8\nO: 15\nP: 9\nQ: 1\nR: 10\nS: 10\nT: 23\nU: 11\nV: 5\nW: 2\nX: 2\nY: 3\nZ: 1\nYou've input a total of 191 letters.\n" };
+		verificationBuffer[363] = 17; // Manually set the 'escape character' (Ctrl-Q) since I can't type it
+		char tempChar = 0;
+
+		/* Copy the contents of the file into copyBuffer[] */
+		i = 0; // Incrementing variable is zeroized because it is used elsewhere
+		while (tempChar != 17) // Stop copying when you reach decimal value 17 (Ctrl-Q)
+		{
+			tempChar = getc(preStagedInput); // Read one character from the test input file
+			copyBuffer[i] = tempChar; // Put that character into the copyBuffer
+			i++; // Advance to the next element
+			if ((BUFF_SIZE - 1) == i) // Reached the end of the copy buffer
+			{
+				copyBuffer[i] = 0; // Manually ensure string is null terminated... for safety
+				break; // Will cause the while loop to end
+			}
+		}
+		copyBuffer[BUFF_SIZE - 1] = 0; // Manually null terminate the string... for safety
+		verificationBuffer[BUFF_SIZE - 1] = 0; // Manually null terminate the string... for safety
+
+		if (!(strcmp(copyBuffer, verificationBuffer))) // strcmp() will compare two strings
+		{
+			printf("The file has not been changed.\n");
+		}
+		else // ...test input file and original copy are not identical!
+		{
+			printf("We have a problem!\n\tThe file appears to have been changed.\n\tFixing file...\n");
+			rewind(preStagedInput); // Rewinds the file pointer to the beginning of the file
+			freopen(LARGE_TEST_FILE_LOCATION, "w", preStagedInput); // Closes and reopens the file in write mode
+			if (preStagedInput) // Verifies the reopen functioned on the file pointer
+			{
+				for (i = 0; i < BUFF_SIZE; i++) // Iterates through original copy
+				{
+					if (0 == verificationBuffer[i]) // Stops writing to the file when it encounters a null character from the original copy
+					{
+						break;
+					}
+					putc(verificationBuffer[i], preStagedInput); // Places the original version of the file into the test input file character by character
+				}
+				rewind(preStagedInput); // Rewinds the file pointer
+				freopen(LARGE_TEST_FILE_LOCATION, "r", preStagedInput); // Reopens the test input file in read-only mode... again
+			}
+
+			if (preStagedInput) // Verifies the read-only reopen was successful
+			{
+				printf("\tThe file contents have been replaced.\n");
+			}
+			else // ...otherwise something went wrong
+			{
+				printf("\tReopening the file to fix the contents did not work.\n");
+				return -1;
+			}
+		}
+
+		/* Full Test #1 */
+		printf("TEST 1\tCounting total characters:  \n\t");
+		totalChars = count_input(preStagedInput);
+		printf("Return Value\t");
+		numUnitTestsRun++;
+		if (364 == totalChars)
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+		printf("\tGlobal Array\t");
+		numUnitTestsRun++;
+		int testAlphabetCountFull[26] = { 18, 4, 7, 4, 17, 7, 2, 7, 13, 1, 1, 9, 2, 8, 15, 9, 1, 10, 10, 23, 11, 5, 2, 1, 3, 1 };
+		int failedCheck = 0; // Boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j] != testAlphabetCountFull[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+
+		/* Full Test #2 */
+		totalAlphaChars = print_alpabet_count(0);
+		printf("TEST 2\tCounting alphabet letters:  \n\t");
+		printf("Return Value\t");
+		numUnitTestsRun++;
+		if (191 == totalAlphaChars)
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+		else
+		{
+			printf("FAIL\n");
+		}
+
+		printf("\tGlobal Array\t");
+		numUnitTestsRun++;
+		failedCheck = 0; // Reseting boolean variable used to determine if alphabetCount failed its verification check
+		for (j = 0; j < 26; j++)
+		{
+			if (alphabetCount[j])
+			{
+				failedCheck = 1;
+				memset(alphabetCount, 0, 26 * sizeof(int));
+				break;
+			}
+		}
+		if (failedCheck)
+		{
+			printf("FAIL\n");
+		}
+		else
+		{
+			printf("PASS\n");
+			numUnitTestsPassed++;
+		}
+	}
+	else
+	{
+		printf("\n\nThere has been an error opening the test input file\n");
+	}
+
+	if (preStagedInput)
+	{
+		fclose(preStagedInput);
+	}
+#endif
+
+
+#ifdef MANUAL
+	printf("This program will count the number of characters and letters you input.\nWhen you are done with your input, input Ctrl-Q and press Enter.\n\n");
+	totalChars = count_input(stdin);
+	_flushall();
+	printf("You've input a total of %d characters.\n", totalChars);
+	totalAlphaChars = print_alpabet_count(1);
+	printf("You've input a total of %d letters.\n", totalAlphaChars);
+#endif
+
+	if (numUnitTestsRun)
+	{
+		printf("\n\nYou've run %d unit tests and passed %d of them. \n", numUnitTestsRun, numUnitTestsPassed);
+	}
+	return 0;
+}
+
+/*
+* FUNCTION:   int count_input(FILE * inputStream)
+*
+* ARGUMENTS:  inputStream is a file pointer.  The stream is passed by reference.
+*             By taking a stream as a parameter, this function can process input from stdin (manual input) or
+*                 file pointers (automatic input) for the purpose of unit testing.
+*
+* RETURNS:	  The number of characters, alphabet letters or not, that were input.
+*             For example:
+*                 Input:  abc^Q			Return:  4			Explanation:  ^Q (AKA Ctrl-Q, 17) counts as character input
+*                 Input:  90IOS^Q		Return:  6			Explanation:  ^Q (AKA Ctrl-Q, 17) counts as character input
+*                 Input:  something\n
+*                         ^Q			Return:  11			Explanation:  Pressing enter before ^Q (AKA Ctrl-Q, 17) registers as \n input and should be counted
+*                 Input:  ^Q			Return:  1			Explanation:  Even without input, ^Q (AKA Ctrl-Q, 17) counts as character input
+*             Return ERR_NULL_POINTER if inputStream is NULL
+*
+* NOTES:      Not only does this function return the total number of characters that were read from the stream "inputStream",
+*                 this function should also update the character count in the global char array alphabetCount[].
+*             First, uppercase 'A' is technically a different value than a lowercase 'a'.  To avoid this issue, change
+*                 the case of all input to uppercase or lowercase (your discretion).
+*                     Option #1 - The C library contains functions that will change the case of input.  Research and utilize this library function if you wish.
+*                     Option #2 - Changing the case of a letter is a relatively easy algorithm when you consider the decimal value for char values.
+*                         Feel free to write your own algorithm and/or function to change the case of your input if you wish.
+*                     NOTE:  Regardless of the option you choose, there are only 26 elements in the global array so you'll have to count capitals
+*                         and lowercase input in the same index.
+*             Second, each element in alphabetCount[] counts the number of occurences for a letter of the alphabet.  Element 0 represents A and
+*                 element 25 represents Z.  This means the value at element 0 represents the total number of As that have been counted.
+*                 The value at element 7, as another example, represents the number of Hs that have been read.  Another example is that the value of
+*                 alphabetCount[10] represents the number of letter Ks that have been counted.  Increment the approrpiate alphabetCount element based on
+*                 the alphabet letter that has been counted.
+*             Third, stop taking input upon receiving decimal value 17 (AKA Ctrl-Q).  Decimal value 17 may be replicated by manually inputting Ctrl-Q as input.
+*                 The character input of 17 (AKA Ctrl-Q) should count towards the overall character input and should not be ignored.
+*             Fourth, ensure you check if inputStream is NULL.  If inputStream is NULL, return ERR_NULL_POINTER.
+*             Fifth, stop looping through stream input if you input an EOF.  EOF stands for End of File.  EOF is #defined to represent the end of a file.
+*/
+int count_input(FILE * inputStream)
+{
+	if (inputStream) // If inputStream is not NULL...
+	{
+		rewind(inputStream); // Moves the file pointer to the beginning of the file.  This is necessary for reading one file multiple times.
+		long int characterCount = 0; // Total number of characters that have been read
+		char inputCharacter = 0; // Temp variable to hold characters read from inputStream
+
+		while (inputCharacter != 17) // Stop taking input if the last character read was a Ctrl-Q
+		{
+			inputCharacter = getc(inputStream); // Get one character from the FILE pointer
+			if (inputCharacter == EOF) // Stop looping on EOF
+			{
+				break;
+			}
+			else if (inputCharacter < 0)
+			{
+				printf("Someting went wrong.\nThere was a character in inputStream that wasn't an appropriate value.\n"); // Sometimes EOF is something other than -1
+				break;
+			}
+			inputCharacter = toupper(inputCharacter); // Change the last character read to uppercase
+			characterCount++; // Increment the character counter
+
+			if (inputCharacter >= 'A' && inputCharacter <= 'Z') // If the last read character was an uppercase letter...
+			{
+				/* ...increment the appropriate element in alphabetCount[].  Since element 0 represents A (decimal value 65),
+				* a value shift of 65 will result in the appropriate element to increment.
+				*/
+				alphabetCount[inputCharacter - 65]++;
+			}
+		}
+
+		/* Return the total number of characters that have been read. This value should include:
+		*     Alphabet letters
+		*     Non-alphabet characters
+		*     Non-printable characters
+		*     The Ctrl-Q that ends the 'reading' loop
+		*/
+		return characterCount;
+	}
+	else
+	{
+		return ERR_NULL_POINTER; // ...Otherwise, return ERR_NULL_POINTER because inputStream is NULL
+	}
+}
+
+/*
+* FUNCTION:   int clear_global_array(int currentAlphaCount)
+*
+* ARGUMENTS:  currentAlphaCount represents the expected sum of the alphabetCount[] global array.  This function
+*                 should perform it's own count of alphabetCount[] as it clears the array to verify no illegal
+*                 modifications have taken place.
+*
+* RETURNS:	  1 if currentAlphaCount matches the sum performed by clear_global_array() 
+			  ERR_COUNT_MISMATCH if currentAlphaCount doesn’t match the sum clear_global_array() came up with
+
+*
+* NOTES:      First, this function sums in order to return, the total number of alphabet letters that were counted in alphabetCount[]
+*             Second, this function should also 'zeroize' all the elements of this array
+*/
+int clear_global_array(int currentAlphaCount)
+{
+	int count = 0; // Stores the sum of all the elements in alphabetCount[]
+	int i = 0; // Incrementing variable
+
+	for (i = 0; i < (sizeof(alphabetCount) / sizeof(alphabetCount[0])); i++) // Dynamically determines dimension of alphabetCount
+	{
+		count += alphabetCount[i]; // Increments "count" by the value contained in alphabetCount[i]
+		alphabetCount[i] = 0; // Zeroizes alphabetCount[i]
+	}
+
+	/* Verifies that current "count" matches the value that was passed to clear_global_array() */
+	if (currentAlphaCount == count)
+	{
+		return 1; // Success
+	}
+	else
+	{
+		return ERR_COUNT_MISMATCH; // This return value represents there was a mismatch
+	}
+}
+
+/*
+* FUNCTION:   int print_alpabet_count(int printTheCount)
+*
+* ARGUMENTS:  printTheCount is utilized as a binary flag.  If printTheCount is on (AKA non-zero), then print_alphabet_count()
+*                 should print the character count to stdout.  If printTheCount == 0, then print_alphabet_count() shouldn't
+*                 actually print anything to stdout.  The return value should be unchanged by the value passed into printTheCount.
+*
+* RETURNS:	  The sum of all values contained in all elements of alphabetCount[]
+*                 This sum should represent the total number of alphabet letters [a-z, A-Z] that were stored in alphabetCount[]
+*
+* NOTES:      First, this function sums and returns the total number of alphabet letters that were counted in alphabetCount[]
+*             Second, this function should also print the per-letter count to stdout if printTheCount is a non-zero value.
+*             Third, this function should invoke clear_global_array() once the total number of alphabet letters have been summed
+*                 and the per-letter count has been printed (if required by printTheCount).  clear_global_array() is defined
+*                 later but should zeroize the global array.  If clear_global_array() returns ERR_COUNT_MISMATCH, print an error.
+*/
+int print_alpabet_count(int printTheCount)
+{
+	char i = 0;
+	int runningTotal = 0;
+	for (i = 65; i < 91; i++)
+	{
+		if (printTheCount)
+		{
+			printf("%c: %d \n", i, alphabetCount[i - 65]);
+		}
+		runningTotal += alphabetCount[i - 65];
+	}
+	if (!(clear_global_array(runningTotal)))
+	{
+		printf("***********************************************************\n");
+		printf("There was an error clearing the zeroizing the global array.\n");
+		printf("***********************************************************\n");
+	}
+
+	return runningTotal;
+}
+
+
+#define SUCCESS 0
+#define ERR_NULL_POINTER -1
+#define ERR_INVALID_LENGTH -2
+
+#include <ctype.h>
+#include <stdio.h>
+
+int print_the_count(char * inputString, int strLen)
+{
+	int theCount = 0; // Running count of upper case letters
+	int i = 0; // Incrementing variable
+	char oneCharacter = 0; // Temp storage to change each string character to an upper case character one by one
+	/*
+	*  An array to store the by-letter-count of upper case letters
+	*  Each element represents the count of an upper case letter
+	*  Index 0 represents the letter A
+	*  IndeI.25 represents the letter Z
+	*/
+	int countTheLetters[26] = { 0 };
+
+	if (!inputString) // Checks for NULL pointer
+	{
+		return ERR_NULL_POINTER;
+	}
+	else if (strLen <= 0) // Checks for unrealistic input
+	{
+		return ERR_INVALID_LENGTH;
+	}
+	else
+	{
+		/*
+		*  COUNT THE STRING'S ALPHABET LETTERS
+		*/
+		for (i = 0; i < strLen; i++)
+		{
+			//			printf("%c", inputString[i]); // DEBUGGING
+			oneCharacter = toupper(inputString[i]); // Changes the string to upper case characters
+			if (oneCharacter >= 65 && oneCharacter <= 90) // If the character matches A-Z...
+			{
+				countTheLetters[oneCharacter - 65]++;	// ...Add one to the count of this particular upper case letter...
+				theCount++;								// ...and increment the running count of upper case letters
+			}
+		}
+
+		/*
+		*  PRINT THE ALPHABET CHART
+		*/
+		// Table title
+		printf("\n************\n");
+		printf("LETTER COUNT\n");
+		printf("************\n");
+		for (i = 65; i <= 90; i++) // Check the decimal value of each upper case letter
+		{
+			if (countTheLetters[i - 65] > 0) // If the value is greater than zero...
+			{
+				printf("%c\t%d\n", i, countTheLetters[i - 65]); // ...print a table entry for this letter
+			}
+		}
+	}
+
+	return theCount; // Return the running count of upper case letters
+}
+
+int reverse_it(char * forwardString, int strLen)
+{
+	int i = 0;
+	char tempChar = 0;
+
+	if (!forwardString)
+	{
+		return ERR_NULL_POINTER;
+	}
+	else if (strLen <= 0)
+	{
+		return ERR_INVALID_LENGTH;
+	}
+	else
+	{
+		for (i = (strLen - 1); i >= 0; i--)
+		{
+			putc(forwardString[i], stdout);
+		}
+		putc(10, stdout);
+	}
+	return SUCCESS;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////// PERFORMANCE LAB 1.3.a-4 ////////////////////////////////////////////////
+/////////////////////////////////////////////////// Recursion ////////////////////////////////////////////////////////
+///////////////////////////////////////////// "Shadow Sequence Number" /////////////////////////////////////////////// 
+/////////////////////////////////////////////// Instructor Solution //////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// This performance lab requirement is admittedly a contrived exercise.
+// Admittedly, there aren't many easy problems to solve that call for recursion.
+// Most of the easy-to-solve recursion problems are frequently used in academia and are already highly documented
+//     on the Interwebs.
+// This requirement is very similar to Fibonacci Sequence problem (Demonstration Lab 1.3.a-4) but was slightly
+//     modified so the students couldn't just "Google" a solution.
+// This lab may be relatively simple to accomplish but it was intentionally chosen.  Recursion can be a difficult
+//     enough concept to grasp without having to apply it to an overly complicated problem.
+// Do not forget that a recursive solution must have an ending point and make the problem simpler.
+// NOTE:  The limit of MAXIMUM_SEQ_NUM (4500) sequence numbers was chosen for safety.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define MAXIMUM_SEQ_NUM (2300)
+#define ERROR_VALUE (105)
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+/*
+ * This pre-processing directive determines whether the program will
+ *     run unit tests and/or prompt the user for input depending on
+ *     what #define statements are uncommented.
+#define MANUAL_TEST // Allows the programmer to manually provide input to test the response of the program as a whole
+#define AUTO_TEST // Runs unit tests on unsigned long shadow_sequence_number(int placeNumber)
+ * Uncomment out multiple #defines to multiple tests in a single run
+ */
+//#define MANUAL_TEST
+#define AUTO_TEST
+
+unsigned long shadow_sequence_number(int placeNumber);
+
+int main(void)
+{
+	unsigned long tempValue = 0;
+	unsigned long myTempValue = 0;
+	int i = 0;
+	int j = 0;
+
+#ifdef MANUAL_TEST
+	int howManyToCalculate = 0;
+	tempValue = 0;
+
+	printf("How many numbers would you like to calculate?\n");
+	_flushall();
+	scanf("%d", &howManyToCalculate);
+	putchar(10);
+
+	for (i = 1; i <= howManyToCalculate; i++)
+	{
+		tempValue = shadow_sequence_number(i);
+		printf("%d:\t%lu \n", i, tempValue);
+	}
+#endif
+
+#ifdef AUTO_TEST
+
+#define BUFF_SIZE 24
+	tempValue = 0;
+	int numberOfTestsRun = 0;
+	int numberOfTestsPassed = 0;
+	int placeNumbers[BUFF_SIZE] = { -31337, ((MAXIMUM_SEQ_NUM + 1) * -1), (MAXIMUM_SEQ_NUM * -1), -1337, -100, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 100, 1337, MAXIMUM_SEQ_NUM, (MAXIMUM_SEQ_NUM + 1), 31337 };
+	unsigned long returnValues[BUFF_SIZE] = { ERROR_VALUE, ERROR_VALUE, ERROR_VALUE, ERROR_VALUE, ERROR_VALUE, ERROR_VALUE, 9, 0, 9, 25, 50, 86, 135, 199, 280, 380, 501, 645, 814, 338345, 797553920, 4058312045, ERROR_VALUE, ERROR_VALUE };
+
+	for (i = 0; i < BUFF_SIZE; i++)
+	{
+		tempValue = shadow_sequence_number(placeNumbers[i]);
+		numberOfTestsRun++;
+		if (tempValue == returnValues[i])
+		{
+			numberOfTestsPassed++;
+		}
+	}
+
+	printf("\n\nNumber of tests run:\t%d\n", numberOfTestsRun);
+	printf("Number of tests passed:\t%d\n", numberOfTestsPassed);
+#endif
+
+	return 0;
+}
+
+/*
+ * FUNCTION:   unsigned long shadow_sequence_number(int placeNumber)
+ *
+ * ARGUMENTS:  placeNumber represents the individual "Shadow Sequence" position number to calculate
+ *
+ * RETURNS:	   The value of of the "Shadow Sequence" number at position "placeNumber" [see: S(placeNumber)].
+ *			   The "Shadow Sequence" is calculated utlizing the following algorithm:
+ *                 S(n) = S(n-1) + (n * n) where "n" represents a given position and S(n) represents the value at
+ *                     position "n".  S(1) is always equal to 9.  S(2) is always equal to 0.  The algorithm begins
+ *                     calculating at S(3).  (see NOTES: for details)  
+ *             ERROR_VALUE (105) if placeNumber is unrealistic or dangerous
+ *
+ * NOTES:      This function should only be returning a single sequence number from the "Shadow Sequence".
+ *             This function should *not* be calculating multiple sequence numbers during a single function call.
+ *             Nor should this function be printing any sequence numbers.
+ *             However, this function will need to call itself recursively to calculate all of the previous sequence
+ *                 numbers in order to calculate the sequence number at position "placeNumber".
+ *             Any requirements to calcualte or print multiple numbers in the "Shadow Sequence" should be
+ *                 accomplished by the calling function [e.g., main()]
+ *             The data type of long was chosen as the return value to increase the available output.
+ *             The keyword unsigned was chosen to further maximize the available output since this algorithm
+ *                 should not be producing any negative numbers.
+ *			   The "Shadow Sequence" is calculated utlizing the following algorithm:
+ *                 S(n) = S(n-1) + (n * n) where "n" represents a given position and S(n) represents the value at
+ *                     position "n".  S(1) is always equal to 9.  S(2) is always equal to 0.  The algorithm begins
+ *                     calculating at S(3).  For example, here are some sample calculations of S(n)
+ *                     S(1) = 9.
+ *                     S(2) = 0.
+ *                     S(3) = S(2) + (3 * 3) ---> S(3) = (0)  + (9) ---> S(3) = 9.
+ *                     S(4) = S(3) + (4 * 4) ---> S(4) = (9)  + (16) --> S(4) = 25.
+ *                     S(5) = S(4) + (5 * 5) ---> S(5) = (25) + (25) --> S(5) = 50.
+ *
+ *             The first few "Shadow Sequence" numbers are as follows:
+ *                 S(1)		S(2)	S(3)	S(4)	S(5)	S(6)	S(7)	S(8)	S(9)	S(10)
+ *                 9		0		9		25		50		86		135		199		280		380
+ */
+unsigned long shadow_sequence_number(int placeNumber)
+{
+	unsigned long returnValue = 0;
+
+	if (placeNumber < 1)			// "Shadow Sequence" numbers start at S(1)
+	{
+		returnValue = ERROR_VALUE;	
+	}
+	else if (placeNumber > MAXIMUM_SEQ_NUM)
+	{
+		returnValue = ERROR_VALUE;
+	}
+	else if (1 == placeNumber)		// S(1) is always 9
+	{
+		returnValue = 9;
+	}
+	else if (2 == placeNumber)		// S(2) is always 0
+	{
+		returnValue = 0;
+	}
+	else
+	{
+		/*
+		 *  The "Shadow Sequence" is calculates the value at position "n" with the following algorithm
+		 *  S(1) is always 9
+		 *  S(2) is always 0
+		 *  Otherwise, S(n) is calcuated with S(n) = S (n-1) + (n * n) 
+		 */
+		returnValue = shadow_sequence_number(placeNumber - 1) + (placeNumber * placeNumber);
+	}
+
+	return returnValue;
+}
